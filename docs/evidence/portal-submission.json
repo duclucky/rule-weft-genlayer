@@ -1,0 +1,22 @@
+{
+  "observedAt": "2026-10-20T07:41:33.966Z",
+  "project": "RuleWeft",
+  "category": "Builders / Projects",
+  "submissionId": "e1edc516-c747-4481-a44d-1da32869b5bf",
+  "contributionStatus": "Pending review",
+  "projectId": 1911,
+  "revision": 1,
+  "revisionStatus": "Submitted",
+  "displayedSubmittedTime": "Oct 20, 2026, 2:38 PM (client UTC+7)",
+  "reviewUrl": "https://portal.genlayer.foundation/builders/explorer/manage/1911",
+  "submissionList": "https://portal.genlayer.foundation/my-submissions?q=RuleWeft",
+  "evidenceItems": 4,
+  "requiredFields": "7/7",
+  "howtoSteps": 9,
+  "submittedHowtoMatchesPacket": true,
+  "descriptionCharacters": 854,
+  "accepted": false,
+  "pointsClaimed": false,
+  "finalSubmitPerformedBy": "owner",
+  "verification": "Actual My Submissions record plus locked revision read in Chrome"
+}

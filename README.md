@@ -7,7 +7,8 @@ exact rules, validators interpret their applicability and declared exceptions,
 and deterministic grounded labeling resolves which rules remain effective.
 Unresolved prohibition cycles never authorize a request.
 
-Status: deployed on Studio Dev; final submission audit is in progress.
+Status: deployed on Studio Dev and submitted under Builders / Projects on
+20 October2026; Portal status is **Pending review**. See [submission proof](docs/evidence/portal-submission.json).
 `npm run check` passes83 direct,4 Python metadata,23 Node and85 frontend tests
 (195 total), semantic lint, TypeScript, native API import and production build.
 Script-signed evidence covers grant/use, denial, conflict, retry and expiry.

@@ -1,7 +1,9 @@
-# Portal Projects packet — DRAFT, not submitted
+# Portal Projects packet — submitted, pending review
 
-Readiness: PRIMARY_BROWSER_EXECUTION_VERIFIED. Submit only after the final four-source audit
-and CI for the final public commit are verified; CAPTCHA requires owner action.
+Submitted by the owner on2026-10-20. Verified in Chrome: Pending review,
+submission `e1edc516-c747-4481-a44d-1da32869b5bf`, project1911 revision1 Submitted.
+All9 separate How-to headings/instructions match the submitted locked revision.
+See [submission evidence](evidence/portal-submission.json). No acceptance or points award is claimed.
 
 - Category: Builders / Projects.
 - Project name: RuleWeft.
@@ -14,20 +16,48 @@ and CI for the final public commit are verified; CAPTCHA requires owner action.
 - Consumer contract: N/A. One application contract owns the permission boundary.
 - Lifecycle evidence: https://github.com/duclucky/rule-weft-genlayer/blob/main/docs/evidence/studio-dev/canonical-summary.json
 - Native recovery evidence: https://github.com/duclucky/rule-weft-genlayer/blob/main/docs/evidence/studio-dev/recovery-acceptance.json
-- CI: use a successful run bound to the final public commit; current-run result must be checked before submission.
+- Successful CI for the current evidence commit ee601ad4cdc5f111a3ba0dc6024a2f8efd38015d: https://github.com/duclucky/rule-weft-genlayer/actions/runs/39376767044. Verify any later documentation commit separately.
 - Demo/video: current authenticated form says YouTube/X video is optional. No fabricated video link.
 
 ## How-to fields
 
-1. Open RuleWeft, select Policies and read Shared diagnostic publication policy.
-2. Choose Connect wallet, select an installed EVM wallet, and switch to Studio Dev.
-3. Request an exact action, supply a future deadline and sign the1GEN purchase;
-   network fee reserve is quoted separately. Do not include private information.
-4. Review the request. Wait for successful finality and confirmed rule labels.
-5. Use a granted permission once before its deadline, or recover an unused
-   purchase after expiry. A declined/conflicting request already creates payer credit.
-6. Open Account to withdraw your own confirmed credit. Check wallet activity and
-   canonical state before retrying any transaction that returned no reference.
+Enter each item below as a separate Portal step with its own heading and instruction.
+
+### 1. Open the agreed policy
+
+Open https://rule-weft-genlayer.vercel.app. Select Policies, then open Shared diagnostic publication policy. Read all three rules and their declared exceptions before making a request.
+
+### 2. Connect your wallet
+
+Select Connect wallet. Choose your installed EVM wallet from the wallet-selection modal, approve the connection, and switch to Studio Dev when prompted. Confirm that the connected address is the account you intend to use.
+
+### 3. Describe the action and deadline
+
+Select Request a permission. Enter a unique request ID and this sample action: Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information. Set a deadline at least 30 minutes ahead, within 24 hours and before the policy expires, so review and signing can finish in time. Do not include private information.
+
+### 4. Reserve the 1 GEN purchase
+
+Select Request for 1 GEN and approve the wallet transaction. The purchase is 1 GEN; the app displays the separate network fee reserve before signing. Wait for successful finalization and the Ready for review page. If no transaction reference is returned, inspect wallet activity and the confirmed record before retrying.
+
+### 5. Request the validator review
+
+Select Review this request and approve the wallet transaction. Wait through submitted, accepted or decided, and successful finalized states. The app reloads the confirmed request. For this synthetic-log example, expect Ready to use: R0 and R2 remain effective, while R1 is overridden. If review is retryable, inspect the reason before trying another review.
+
+### 6. Use the granted permission once
+
+Before the request deadline, select Use permission once and approve the wallet transaction. Wait for successful finalization. Confirm Permission used in the request detail and history. The request can no longer be consumed; its reserved 1 GEN becomes withdrawal credit for the fixed issuer. This is a protocol permission, not proof that an external action was executed.
+
+### 7. Recover an unused purchase when eligible
+
+This is an alternative to using the permission. For a separate unused request that remains open, retryable or granted until its deadline, reopen its detail at or after the deadline. Select Recover 1 GEN purchase, sign, and wait for successful finalization. Confirm Purchase recovered. A used request cannot be recovered. A declined or conflicting request already credits its payer without this recovery step.
+
+### 8. Withdraw your own credit
+
+Open Your account & credits, or choose Account from the connected-wallet menu. Check your confirmed available GEN credit. If it is positive, select Withdraw my GEN and approve the wallet transaction. Wait for successful finalization, confirm that your credit is cleared, and verify that GEN reached the connected wallet after network fees. The issuer withdraws its own use fee from its own wallet.
+
+### 9. Revisit and verify the outcome
+
+Open Activity, filter to your requests, and reopen the request detail. Check its confirmed status and review history. Expand Verification details to read the request ID and canonical status. For transaction verification, open the Studio Dev contract Explorer link in the repository README. The public browser-lifecycle.json evidence records the tested purchase, review, use, recovery and withdrawal paths.
 
 ## Verified facts
 
@@ -62,5 +92,6 @@ as a contract-only primitive or a milestone on an already accepted project.
 On2026-10-20 the Projects application showed0/2 weekly slots used, a180-character
 one-liner,1000-character description,7 required fields, required Website and
 GitHub repository evidence. Contract links and YouTube/X demo video are optional.
-The form includes a reCAPTCHA. No field has been submitted and no acceptance or
-points award is claimed. Recheck capacity and fields at actual submission time.
+The owner completed CAPTCHA and submitted. My Submissions confirms Pending review
+and four evidence items. Project1911 revision1 is Submitted and locked, with all9
+How-to steps persisted. No acceptance or points award is claimed.

@@ -3,7 +3,7 @@
 ## Identity
 
 - Idea: IDEA-049; project RuleWeft; slug rule-weft.
-- Category: Projects. Status: FINAL_AUDIT (primary browser execution verified; Portal not submitted).
+- Category: Projects. Status: SUBMITTED_PENDING_REVIEW (primary browser execution verified; Portal project1911 revision1).
 - Network: Studio Dev primary, D1 fallback only after verified unavailability.
 - Repository: https://github.com/duclucky/rule-weft-genlayer
 - App: https://rule-weft-genlayer.vercel.app
