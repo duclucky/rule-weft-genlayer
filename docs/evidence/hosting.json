@@ -1,8 +1,8 @@
 {
-  "at": "2026-10-20T02:23:04Z",
+  "at": "2026-10-20T02:56:35.402Z",
   "url": "https://rule-weft-genlayer.vercel.app",
-  "deploymentId": "dpl_95uHzY1bNTCojHGaL5dJsNTXTwWX",
-  "sourceCommit": "51fc95418c5ed1402c5c93492d225938fe4c29e4",
+  "deploymentId": "dpl_FxDkpj4sNQfBa6gmKj9wBjpZweyc",
+  "sourceCommit": "9c3e61e3747b03e2bb8432197db8eae194829288",
   "rootDirectory": "frontend",
   "framework": "vite",
   "buildCommand": "npm run build",
@@ -24,6 +24,13 @@
       "command": "curl.exe POST /genlayer-rpc eth_chainId",
       "http": 200,
       "result": "0xf22d"
+    },
+    {
+      "command": "Production POST /genlayer-rpc eth_getTransactionByHash for actual browser recovery",
+      "hash": "0x21a5a2218daf8b2975c96881040af3a5055f05f02520b25477dfffb86acffef1",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true
     }
   ],
   "superseded": [
@@ -46,8 +53,13 @@
       "deploymentId": "dpl_F2wareZpsiNgWBRSdQ9HmYuTJTot",
       "status": "SUPERSEDED",
       "reason": "New verified production revision fixes Chrome native-date submission and safe wallet failure diagnostics"
+    },
+    {
+      "deploymentId": "dpl_95uHzY1bNTCojHGaL5dJsNTXTwWX",
+      "status": "SUPERSEDED",
+      "reason": "Receipt proxy now retains only known nested quorum control; uncertain transaction tracking and expired-request guidance corrected"
     }
   ],
-  "browserWalletWrites": "PENDING_REAL_EVIDENCE",
+  "browserWalletWrites": "PARTIAL_LOCAL: purchase/recovery finalized; full browser workflow pending",
   "passedReadHostingChecks": true
 }

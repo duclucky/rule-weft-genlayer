@@ -3,12 +3,12 @@
 ## Identity
 
 - Idea: IDEA-049; project RuleWeft; slug rule-weft.
-- Category: Projects. Status: DELIVERY_IN_PROGRESS (Phase15 audit; browser writes pending).
+- Category: Projects. Status: FINAL_AUDIT (primary browser execution verified; Portal not submitted).
 - Network: Studio Dev primary, D1 fallback only after verified unavailability.
 - Repository: https://github.com/duclucky/rule-weft-genlayer
 - App: https://rule-weft-genlayer.vercel.app
 - Studio Dev deployment and script-signed execution: evidence/studio-dev/canonical-summary.json.
-- Full browser-wallet execution: PENDING_REAL_EVIDENCE; no submission-readiness claim.
+- Primary requester browser execution: PASS; evidence/studio-dev/browser-lifecycle.json. Secondary author/verdict paths are script-proven.
 
 ## One-sentence product hook
 
@@ -237,10 +237,10 @@ is read dynamically, never hardcoded to1. A rejected transaction mutates nothing
 | RATIFYING | Agree to full slate | ratify | PolicyDetail/WriteButton | App exact-digest assent/reload + real-SDK tests | Browser write pending |
 | Expired incomplete policy | Cancel draft | cancel_policy | PolicyDetail/WriteButton | App expired-draft control/reload + real-SDK tests | Browser write pending |
 | ACTIVE | Pay for request | open_request | NewRequest/ProductForm | App purchase/detail + real-SDK exact1GEN sender/value tests | FINALIZED SUCCESS; browser-open.json |
-| OPEN/RETRYABLE | Review/retry | review_request | RequestDetail/WriteButton | App review/reload/error tests PASS, temporal actions PASS | Browser write pending |
-| GRANTED | Use once | consume | RequestDetail/WriteButton | App legal control/reload + temporal/role + real-SDK tests | Browser write pending |
+| OPEN/RETRYABLE | Review/retry | review_request | RequestDetail/WriteButton | App review/reload/error tests PASS, temporal actions PASS | Chrome review FINALIZED SUCCESS; browser-grant-review.json (retry script-proven) |
+| GRANTED | Use once | consume | RequestDetail/WriteButton | App legal control/reload + temporal/role + real-SDK tests | Chrome USED FINALIZED SUCCESS; browser-grant-consume.json |
 | Expired OPEN/RETRYABLE/GRANTED | Recover purchase | recover | RequestDetail/WriteButton | App control/reload + exact-boundary/role + real-SDK tests | FINALIZED SUCCESS; browser-recover.json |
-| Positive own credit | Withdraw | withdraw | Account/WriteButton | Own-credit adapter call/reload test PASS | Browser write and native delivery pending |
+| Positive own credit | Withdraw | withdraw | Account/WriteButton | Own-credit adapter call/reload test PASS | Browser withdraw FINALIZED SUCCESS and exact1GEN native debit; browser-withdraw-proof.json |
 
 All nine rows have wrapper/control/test/finality/reload paths. UI and real-SDK
 tests intercept external I/O in an explicitly labeled test harness; they do not
@@ -448,6 +448,6 @@ collide with existing work. No larger frontend compensates for a failed gate.
 V1 is a three-rule constitutive protocol on a resettable development network;
 not a legal/compliance oracle, proof of real external execution, private-data
 system, general ODRL interpreter, adopted gateway or audited production system.
-Model/finality/value and public hosting have separate verified evidence. Full
-browser-wallet execution remains PENDING. Admission does not become complete
-Projects PASS_EXECUTION until that primary user journey is proven.
+Model/finality/value and public hosting have separate verified evidence. The primary requester Chrome/OKX journey has PASS_EXECUTION with browser-lifecycle.json
+and exact native exit evidence. Author setup and secondary verdict classes remain
+script-proven; no claim of their browser execution is made.

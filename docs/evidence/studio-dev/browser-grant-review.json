@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-20T05:28:43.708Z",
+  "network": "Studio Dev",
+  "method": "review_request",
+  "receipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true,
+    "hash": "0x2c237bcffac715d1e6577652145d8cc8e16af1a1ba7ab96f053637f462d7eab3",
+    "from": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+    "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+  },
+  "request": {
+    "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+    "attempts": 1,
+    "currentAttempt": "chrome-grant-20261020:1",
+    "deadline": 1792501200,
+    "digest": "a0486203c48b7b968a5502170433df1b9aa7a27513bbad846c82ac3bb6530e5c",
+    "id": "chrome-grant-20261020",
+    "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+    "payer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+    "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+    "policyId": "diagnostics",
+    "policyTitle": "Shared diagnostic publication policy",
+    "reason": "R0 applies because the action is external publication of diagnostic logs. R1 applies because it prohibits the same action and expressly overrides R0. R2 applies because the bundle consists entirely of synthetic benchmark logs and excludes customer information, and it expressly operates as an excepti",
+    "reserveGEN": "1",
+    "rules": [
+      {
+        "applicability": "APPLIES",
+        "exception": "NO_OVERRIDE",
+        "id": "R0",
+        "label": "IN"
+      },
+      {
+        "applicability": "APPLIES",
+        "exception": "OVERRIDES",
+        "id": "R1",
+        "label": "OUT"
+      },
+      {
+        "applicability": "APPLIES",
+        "exception": "OVERRIDES",
+        "id": "R2",
+        "label": "IN"
+      }
+    ],
+    "status": "GRANTED"
+  },
+  "canConsume": true
+}

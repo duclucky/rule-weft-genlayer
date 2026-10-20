@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-20T02:55:09.857369+00:00",
+  "at": "2026-10-20T05:46:10.203369+00:00",
   "tool": "unmodified parent tools/genlayer-grading-bot/genlayer-precheck.ps1",
   "command": "genlayer-precheck.ps1 -Project D:\\Genlayer Project\\rule-weft -Category projects -RepoUrl https://github.com/duclucky/rule-weft-genlayer -ExplorerUrl https://explorer-studio-dev.genlayer.com/address/0xFd64D6cD0816970CE6151aa5232cf8f4Bdf41D32 -NotesFile docs/SUBMISSION-DESCRIPTION.txt",
   "counts": {
@@ -42,6 +42,8 @@
       "item": "frontend actually calls the contract (not branding-only)"
     }
   ],
-  "browserWallet": "PARTIAL: owner-signed1GEN purchase and expiry recovery FINALIZED SUCCESS; withdrawal and review/use pending",
-  "officialScoreClaimed": false
+  "browserWallet": "PASS_EXECUTION for primary requester; browser-lifecycle.json",
+  "officialScoreClaimed": false,
+  "notesCharactersAtRun": 855,
+  "notesNote": "Final description854 trimmed characters;855 with trailing newline. Original grader rerun0BLOCKER2WARN; dynamic checks PASS."
 }

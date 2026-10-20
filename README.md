@@ -7,21 +7,19 @@ exact rules, validators interpret their applicability and declared exceptions,
 and deterministic grounded labeling resolves which rules remain effective.
 Unresolved prohibition cycles never authorize a request.
 
-Status: deployed on Studio Dev; full delivery is in progress. The latest
-`npm run check` passed 87 Python, 23 Node and 85 frontend tests (195 total), plus
-semantic lint, TypeScript and production build. Grant/use, denial, conflict,
-retry and expiry have finalized with real native GEN exits. Fresh reconciliation
-finds 47 lifecycle transactions, 9 expected request states, 9 GEN received and
-withdrawn, and 0 GEN native balance, escrow and credit. These are local and
-script-signed network results, not CI or browser-write proof.
+Status: deployed on Studio Dev; final submission audit is in progress.
+`npm run check` passes83 direct,4 Python metadata,23 Node and85 frontend tests
+(195 total), semantic lint, TypeScript, native API import and production build.
+Script-signed evidence covers grant/use, denial, conflict, retry and expiry.
+Owner-signed Chrome/OKX evidence covers purchase, semantic review, one-use
+consumption, separate expiry recovery and own native withdrawal. Issuer withdrawal
+is script-signed and labeled separately. Every new purchase and acceptance exit
+uses1GEN. A historical3GEN aggregate cleanup deviation remains disclosed in
+[recovery corrections](docs/evidence/studio-dev/RECOVERY-CORRECTION.md).
 No external execution, legal permission, ODRL conformance or adoption is claimed.
 
-Chrome RPC/CORS, OKX connection, restoration and logout have been verified.
-The owner signed a real1GEN browser purchase and expiry recovery, both finalized
-successfully. At the latest browser checkpoint, escrow is0GEN and own credit is
-1GEN awaiting withdrawal; the complete browser journey remains pending. The deployed
-contract is0xFd64D6cD0816970CE6151aa5232cf8f4Bdf41D32. See
-[verification](docs/VERIFICATION.md), [preserved recovery corrections](docs/evidence/studio-dev/RECOVERY-CORRECTION.md)
+The contract is0xFd64D6cD0816970CE6151aa5232cf8f4Bdf41D32. See
+[verification](docs/VERIFICATION.md), [browser lifecycle](docs/evidence/studio-dev/browser-lifecycle.json)
 and [specification](docs/README.md).
 
 ## Live App
@@ -32,8 +30,9 @@ and [specification](docs/README.md).
 
 Verified root HTTP 200, RuleWeft title, React root, and production proxy HTTP 200
 with Studio Dev chain ID 61997. Actual Chrome loads canonical policies/history.
-Production has live read proof. Local Chrome purchase/recovery signatures are
-verified separately; full browser review/use and native withdrawal remain pending.
+Production has live read proof. Local Chrome/OKX wallet lifecycle proof is
+recorded separately in browser-lifecycle.json; it is not described as a
+production-origin signature test.
 
 ## Deployed Contract
 
@@ -65,9 +64,10 @@ separately. Never put keys in frontend environment variables.
 
 The app covers policy creation, author publication/ratification, requests,
 review/retry, one-time consumption, expiry recovery, history and own withdrawal.
-Controls follow canonical state and caller role. Browser purchase/recovery are
-proven; the complete browser workflow is pending. Real-SDK regression tests do
-not substitute for signatures.
+Controls follow canonical state and caller role. The primary requester journey
+has real Chrome/OKX signatures and canonical reloads; author setup and secondary
+verdict cases have separate script execution evidence. Real-SDK tests supplement
+the signatures. No browser claim is made for script-only actor steps.
 
 ## Deployment and reconciliation
 

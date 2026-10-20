@@ -1,0 +1,320 @@
+{
+  "at": "2026-10-20T05:43:18.296253+00:00",
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "contract": "0xFd64D6cD0816970CE6151aa5232cf8f4Bdf41D32",
+  "wallet": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+  "scope": "Local Chrome and selected OKX primary requester journey. Browser purchase/review/use; separate browser expiry recovery/own withdrawal. Issuer native exit is script-signed, not browser evidence.",
+  "flow": {
+    "purchase": {
+      "at": "2026-10-20T05:27:26.077Z",
+      "network": "Studio Dev",
+      "chainId": 61997,
+      "method": "open_request",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x293fedb25f5a75687ea18b3e6c0d739750b3842aae540a0ec9024dfe5c107454",
+        "from": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "request": {
+        "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+        "attempts": 0,
+        "currentAttempt": "",
+        "deadline": 1792501200,
+        "digest": "a0486203c48b7b968a5502170433df1b9aa7a27513bbad846c82ac3bb6530e5c",
+        "id": "chrome-grant-20261020",
+        "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "payer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+        "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+        "policyId": "diagnostics",
+        "policyTitle": "Shared diagnostic publication policy",
+        "reason": "",
+        "reserveGEN": "1",
+        "rules": [],
+        "status": "OPEN"
+      }
+    },
+    "reviewAccepted": {
+      "at": "2026-10-20T05:27:56.312Z",
+      "network": "Studio Dev",
+      "method": "review_request",
+      "requestId": "chrome-grant-20261020",
+      "receipt": {
+        "status": "ACCEPTED",
+        "execution": "SUCCESS",
+        "successful": false,
+        "hash": "0x2c237bcffac715d1e6577652145d8cc8e16af1a1ba7ab96f053637f462d7eab3",
+        "from": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      }
+    },
+    "review": {
+      "at": "2026-10-20T05:28:43.708Z",
+      "network": "Studio Dev",
+      "method": "review_request",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x2c237bcffac715d1e6577652145d8cc8e16af1a1ba7ab96f053637f462d7eab3",
+        "from": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "request": {
+        "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+        "attempts": 1,
+        "currentAttempt": "chrome-grant-20261020:1",
+        "deadline": 1792501200,
+        "digest": "a0486203c48b7b968a5502170433df1b9aa7a27513bbad846c82ac3bb6530e5c",
+        "id": "chrome-grant-20261020",
+        "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "payer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+        "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+        "policyId": "diagnostics",
+        "policyTitle": "Shared diagnostic publication policy",
+        "reason": "R0 applies because the action is external publication of diagnostic logs. R1 applies because it prohibits the same action and expressly overrides R0. R2 applies because the bundle consists entirely of synthetic benchmark logs and excludes customer information, and it expressly operates as an excepti",
+        "reserveGEN": "1",
+        "rules": [
+          {
+            "applicability": "APPLIES",
+            "exception": "NO_OVERRIDE",
+            "id": "R0",
+            "label": "IN"
+          },
+          {
+            "applicability": "APPLIES",
+            "exception": "OVERRIDES",
+            "id": "R1",
+            "label": "OUT"
+          },
+          {
+            "applicability": "APPLIES",
+            "exception": "OVERRIDES",
+            "id": "R2",
+            "label": "IN"
+          }
+        ],
+        "status": "GRANTED"
+      },
+      "canConsume": true
+    },
+    "consume": {
+      "at": "2026-10-20T05:41:11.781Z",
+      "network": "Studio Dev",
+      "chainId": 61997,
+      "method": "consume",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x43dc1a241017ebd28abd7346d8c06d4f6aaeab62748ad08e587dc53ed19fe912",
+        "from": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "request": {
+        "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+        "attempts": 1,
+        "currentAttempt": "chrome-grant-20261020:1",
+        "deadline": 1792501200,
+        "digest": "a0486203c48b7b968a5502170433df1b9aa7a27513bbad846c82ac3bb6530e5c",
+        "id": "chrome-grant-20261020",
+        "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "payer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+        "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+        "policyId": "diagnostics",
+        "policyTitle": "Shared diagnostic publication policy",
+        "reason": "R0 applies because the action is external publication of diagnostic logs. R1 applies because it prohibits the same action and expressly overrides R0. R2 applies because the bundle consists entirely of synthetic benchmark logs and excludes customer information, and it expressly operates as an excepti",
+        "reserveGEN": "0",
+        "rules": [
+          {
+            "applicability": "APPLIES",
+            "exception": "NO_OVERRIDE",
+            "id": "R0",
+            "label": "IN"
+          },
+          {
+            "applicability": "APPLIES",
+            "exception": "OVERRIDES",
+            "id": "R1",
+            "label": "OUT"
+          },
+          {
+            "applicability": "APPLIES",
+            "exception": "OVERRIDES",
+            "id": "R2",
+            "label": "IN"
+          }
+        ],
+        "status": "USED"
+      },
+      "canConsume": false,
+      "issuerCreditGEN": "1",
+      "accounting": {
+        "creditGEN": "1",
+        "escrowGEN": "0",
+        "invariant": true,
+        "receivedGEN": "11",
+        "withdrawnGEN": "10"
+      }
+    },
+    "recoveryPurchase": {
+      "at": "2026-10-20T02:37:46.173Z",
+      "network": "Studio Dev",
+      "chainId": 61997,
+      "hash": "0xf2b512c2ef659d94d707e56608b44bc79df433e0ef389ee7ac934b84849c906c",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0xf2b512c2ef659d94d707e56608b44bc79df433e0ef389ee7ac934b84849c906c",
+        "from": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "request": {
+        "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+        "attempts": 0,
+        "currentAttempt": "",
+        "deadline": 1792464000,
+        "digest": "95fa7410e37fa7d480064a4725f6032e8604e6a0a2fd28173e7d5ec69ba6f893",
+        "id": "chrome-synthetic-20261020",
+        "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "payer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+        "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+        "policyId": "diagnostics",
+        "policyTitle": "Shared diagnostic publication policy",
+        "reason": "",
+        "reserveGEN": "1",
+        "rules": [],
+        "status": "OPEN"
+      },
+      "accounting": {
+        "creditGEN": "0",
+        "escrowGEN": "1",
+        "invariant": true,
+        "receivedGEN": "10",
+        "withdrawnGEN": "9"
+      },
+      "contractBalanceGEN": "1",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xf2b512c2ef659d94d707e56608b44bc79df433e0ef389ee7ac934b84849c906c",
+      "proofType": "Browser OKX signed; transaction observed through Chrome receipt polling; independent finalized canonical read",
+      "method": "open_request",
+      "applicationValueGEN": "1",
+      "beforeEvidence": "browser-before.json",
+      "acceptedObserved": false,
+      "acceptedNote": "Only finalized status was observed for this transaction; no intermediate accepted timestamp is claimed.",
+      "workflowStatus": "PARTIAL: purchase finalized, review/use or recovery/withdraw pending"
+    },
+    "recover": {
+      "at": "2026-10-20T02:47:26.278Z",
+      "network": "Studio Dev",
+      "chainId": 61997,
+      "method": "recover",
+      "requestId": "chrome-synthetic-20261020",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x21a5a2218daf8b2975c96881040af3a5055f05f02520b25477dfffb86acffef1",
+        "from": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x21a5a2218daf8b2975c96881040af3a5055f05f02520b25477dfffb86acffef1",
+      "canonical": {
+        "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+        "attempts": 0,
+        "currentAttempt": "",
+        "deadline": 1792464000,
+        "digest": "95fa7410e37fa7d480064a4725f6032e8604e6a0a2fd28173e7d5ec69ba6f893",
+        "id": "chrome-synthetic-20261020",
+        "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "payer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+        "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+        "policyId": "diagnostics",
+        "policyTitle": "Shared diagnostic publication policy",
+        "reason": "",
+        "reserveGEN": "0",
+        "rules": [],
+        "status": "EXPIRED"
+      }
+    },
+    "payerNativeExit": {
+      "at": "2026-10-20T05:24:14.554Z",
+      "network": "Studio Dev",
+      "chainId": 61997,
+      "method": "withdraw",
+      "transactions": [
+        {
+          "status": "FINALIZED",
+          "execution": "SUCCESS",
+          "successful": true,
+          "hash": "0x6a2227954e24ed187b34b01c12b014e00244bf4db5450b13b39244415a981f05",
+          "from": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+          "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+        },
+        {
+          "status": "FINALIZED",
+          "execution": "ERROR",
+          "successful": false,
+          "hash": "0x66a223a5cff91a3947d79c13329a7c287ed20048aa3eef024960bcdeb1beacc2",
+          "from": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32",
+          "to": "0xc495ef51618d03267a1f227afe5b27b38c748272"
+        }
+      ],
+      "before": {
+        "at": "2026-10-20T02:47:46.984Z",
+        "contractBalanceGEN": "1",
+        "ownerBalanceGEN": "32.277295917082786316"
+      },
+      "after": {
+        "at": "2026-10-20T05:23:24.862Z",
+        "creditGEN": "0",
+        "contractBalanceGEN": "0",
+        "ownerBalanceGEN": "33.277169611832785493",
+        "accounting": {
+          "creditGEN": "0",
+          "escrowGEN": "0",
+          "invariant": true,
+          "receivedGEN": "10",
+          "withdrawnGEN": "10"
+        }
+      },
+      "contractDebitGEN": "1",
+      "recipientNetIncreaseGEN": "0.999873694749999177",
+      "proof": {
+        "exactContractDebit1GEN": true,
+        "positiveRecipientIncrease": true,
+        "zeroCredit": true,
+        "zeroLiabilities": true
+      },
+      "note": "Parent withdrawal is FINALIZED SUCCESS. The generic execution parser reports ERROR for the native Send child; this is not counted as a successful contract execution. Exact1GEN contract balance decrease, positive recipient increase and zero credits prove the native exit. Net gain is after network fees; no exact charged fee or quoted reserve is asserted."
+    },
+    "issuerNativeExit": {
+      "at": "2026-10-20T05:42:19.011Z",
+      "actor": "0x2818B7BC95a05Df416E7c2e7F928e12FE4715cFD",
+      "hash": "0x1df0f1862a820712e836fc303fc6b8cc66438ceae0d22dec177fc6c826b54e30",
+      "creditedGEN": "1",
+      "passed": true,
+      "contractDecreaseGEN": "1",
+      "recipientIncreaseGEN": "0.999873694749999177",
+      "creditAfterGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x1df0f1862a820712e836fc303fc6b8cc66438ceae0d22dec177fc6c826b54e30",
+        "from": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "scope": "Script-signed peer issuer exit after browser USED"
+    }
+  },
+  "limitations": [
+    "Author creation/publication/ratification, denial/conflict/retry remain script-signed execution proof plus frontend control/tests, not claimed Chrome execution.",
+    "Only one GRANTED permission is consumed; no external execution or adoption is claimed.",
+    "Intermediate ACCEPTED status is captured for review; no unobserved transaction timestamp is invented."
+  ],
+  "passed": true
+}

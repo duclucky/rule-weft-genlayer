@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-20T05:27:26.077Z",
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "method": "open_request",
+  "receipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true,
+    "hash": "0x293fedb25f5a75687ea18b3e6c0d739750b3842aae540a0ec9024dfe5c107454",
+    "from": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+    "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+  },
+  "request": {
+    "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+    "attempts": 0,
+    "currentAttempt": "",
+    "deadline": 1792501200,
+    "digest": "a0486203c48b7b968a5502170433df1b9aa7a27513bbad846c82ac3bb6530e5c",
+    "id": "chrome-grant-20261020",
+    "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+    "payer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+    "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+    "policyId": "diagnostics",
+    "policyTitle": "Shared diagnostic publication policy",
+    "reason": "",
+    "reserveGEN": "1",
+    "rules": [],
+    "status": "OPEN"
+  }
+}

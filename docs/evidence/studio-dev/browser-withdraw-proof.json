@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-20T05:24:14.554Z",
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "method": "withdraw",
+  "transactions": [
+    {
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "successful": true,
+      "hash": "0x6a2227954e24ed187b34b01c12b014e00244bf4db5450b13b39244415a981f05",
+      "from": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+      "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+    },
+    {
+      "status": "FINALIZED",
+      "execution": "ERROR",
+      "successful": false,
+      "hash": "0x66a223a5cff91a3947d79c13329a7c287ed20048aa3eef024960bcdeb1beacc2",
+      "from": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32",
+      "to": "0xc495ef51618d03267a1f227afe5b27b38c748272"
+    }
+  ],
+  "before": {
+    "at": "2026-10-20T02:47:46.984Z",
+    "contractBalanceGEN": "1",
+    "ownerBalanceGEN": "32.277295917082786316"
+  },
+  "after": {
+    "at": "2026-10-20T05:23:24.862Z",
+    "creditGEN": "0",
+    "contractBalanceGEN": "0",
+    "ownerBalanceGEN": "33.277169611832785493",
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "0",
+      "invariant": true,
+      "receivedGEN": "10",
+      "withdrawnGEN": "10"
+    }
+  },
+  "contractDebitGEN": "1",
+  "recipientNetIncreaseGEN": "0.999873694749999177",
+  "proof": {
+    "exactContractDebit1GEN": true,
+    "positiveRecipientIncrease": true,
+    "zeroCredit": true,
+    "zeroLiabilities": true
+  },
+  "note": "Parent withdrawal is FINALIZED SUCCESS. The generic execution parser reports ERROR for the native Send child; this is not counted as a successful contract execution. Exact1GEN contract balance decrease, positive recipient increase and zero credits prove the native exit. Net gain is after network fees; no exact charged fee or quoted reserve is asserted."
+}

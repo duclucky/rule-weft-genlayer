@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-20T02:56:35.402Z",
+  "url": "https://rule-weft-genlayer.vercel.app",
+  "rootStatus": 200,
+  "name": true,
+  "reactRoot": true,
+  "deployedAsset": "assets/index-D-XJCfDx.js",
+  "realRecoveryReceipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-20T05:27:56.312Z",
+  "network": "Studio Dev",
+  "method": "review_request",
+  "requestId": "chrome-grant-20261020",
+  "receipt": {
+    "status": "ACCEPTED",
+    "execution": "SUCCESS",
+    "successful": false,
+    "hash": "0x2c237bcffac715d1e6577652145d8cc8e16af1a1ba7ab96f053637f462d7eab3",
+    "from": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+    "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+  }
+}

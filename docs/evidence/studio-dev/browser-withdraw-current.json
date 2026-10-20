@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-20T05:23:24.862Z",
+  "creditGEN": "0",
+  "contractBalanceGEN": "0",
+  "ownerBalanceGEN": "33.277169611832785493",
+  "accounting": {
+    "creditGEN": "0",
+    "escrowGEN": "0",
+    "invariant": true,
+    "receivedGEN": "10",
+    "withdrawnGEN": "10"
+  }
+}

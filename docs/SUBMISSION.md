@@ -1,13 +1,13 @@
 # Portal Projects packet — DRAFT, not submitted
 
-Readiness: PENDING_REAL_BROWSER_WALLET_EVIDENCE. Do not submit until the actual
-primary-wallet lifecycle, final four-source audit and current CI are verified.
+Readiness: PRIMARY_BROWSER_EXECUTION_VERIFIED. Submit only after the final four-source audit
+and CI for the final public commit are verified; CAPTCHA requires owner action.
 
 - Category: Builders / Projects.
 - Project name: RuleWeft.
 - Primary tag: Governance. Confirm available secondary tags in the current form.
 - One-liner: Agree on policy exceptions, then buy a one-use permission interpreted by independent GenLayer validators.
-- Description: use SUBMISSION-DESCRIPTION.txt (876 characters, limit1000).
+- Description: use SUBMISSION-DESCRIPTION.txt (854 characters, limit1000).
 - Website: https://rule-weft-genlayer.vercel.app
 - GitHub and repository evidence: https://github.com/duclucky/rule-weft-genlayer
 - Primary contract: https://explorer-studio-dev.genlayer.com/address/0xFd64D6cD0816970CE6151aa5232cf8f4Bdf41D32
@@ -34,16 +34,21 @@ primary-wallet lifecycle, final four-source audit and current CI are verified.
 One contract: RuleWeftContract;9 writes/9 views. Local check195 tests:83 direct,
 4 Python metadata,23 Node and85 frontend, plus emitted-API native-Node validation.
 Studio Dev script-signed proof covers grant/use, denial, conflict, review/retry,
-expiry recovery and exact native exits.9GEN received and withdrawn; no native
-balance or liabilities remain at the recorded canonical checkpoint.
+expiry recovery and exact native exits. Current canonical reconciliation has
+11GEN received=withdrawn,0GEN native balance, escrow and credit;11 request states,
+48 script journals plus separately recorded browser transactions.
 
-The live app has root200/name/React root and working IC proxy61997; actual Chrome
-reads real policy/history/USED state. Local Chrome purchase and recovery signatures finalized successfully; own1GEN
-withdrawal credit remains pending. Browser review/use is still unproven. Automated
-wallet calls returned4001; owner direct clicks successfully requested signatures. A script signature
-is not counted as browser proof. One3GEN cleanup deviation remains disclosed;
-corrective acceptance exits each used1GEN. No external execution, compliance,
-production audit, other-network deployment or existing adopter is claimed.
+The live app has root200/name/React root and working IC proxy61997. Local Chrome/OKX
+purchase/review/use and separate expiry recovery/own withdrawal have successful
+finality and canonical consequences; issuer exit is script-signed. See
+browser-lifecycle.json and browser-withdraw-proof.json. Production-origin signatures
+and author/secondary-case Chrome execution are not claimed. One historical3GEN
+cleanup deviation is retained; all corrective/browser acceptance exits used1GEN.
+No external execution, legal compliance, production audit, other-network deployment
+or existing adopter is claimed.
+
+Expected verification outcome (within500 characters): use PORTAL-VERIFICATION.txt.
+Browser lifecycle: https://github.com/duclucky/rule-weft-genlayer/blob/main/docs/evidence/studio-dev/browser-lifecycle.json
 
 ## Why Projects
 

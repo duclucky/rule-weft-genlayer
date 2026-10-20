@@ -157,7 +157,7 @@ If the deadline becomes too close before purchase, update it through the UI;
 never change an already-created canonical request. No GEN was deposited by this
 browser at this checkpoint.
 
-## Browser purchase/recovery and receipt repair � 2026-10-20T02:54Z
+## Browser purchase/recovery and receipt repair — 2026-10-20T02:54Z
 
 Owner-signed Chrome/OKX open_request f2b512c2ef659d94d707e56608b44bc79df433e0ef389ee7ac934b84849c906c
 and recover21a5a2218daf8b2975c96881040af3a5055f05f02520b25477dfffb86acffef1
@@ -178,3 +178,22 @@ import, TypeScript and production build PASS. The unmodified parent grader
 returned0BLOCKER,2WARN,7AUTO; dynamic npm run check and gltest PASS, all five
 machine gates PASS. Exit1 is its reviewed-warning status, not a clean zero exit.
 Phase15 and Gate13 execution remain pending; Phase16 has not started.
+
+## Primary requester acceptance — 2026-10-20T05:43Z
+
+Browser-lifecycle.json passed=true: selected Chrome OKX signed two purchases,
+review, consume, expiry recovery and own withdrawal. Grant review was observed
+ACCEPTED then FINALIZED SUCCESS; consume FINALIZED SUCCESS produced USED and
+can_consume=false. Issuer1GEN credit was withdrawn by a separately labeled
+script-signed peer; exact native debit/recipient increase passed.
+
+node --dns-result-order=ipv4first scripts/evidence-summary.mjs returned exit0:
+passed=true,11 request states,48 script journals,8 script native exits,
+received11GEN=withdrawn11GEN, escrow0GEN,credit0GEN,native0GEN. Browser own native
+exit is a separate ninth proof; no signature/transaction counts are conflated.
+
+Gate13 PASS_EXECUTION is now supported for the primary requester scope. All nine
+UI controls have tests; author setup/secondary verdict Chrome execution is not
+claimed. No extra contract, external enforcement or adoption has been added.
+
+Final original grader rerun on the854-character description:0BLOCKER,2WARN,7AUTO; npm run check PASS; gltest PASS; all5 machine gates PASS; notes855 including newline. Warning exit1 is retained.

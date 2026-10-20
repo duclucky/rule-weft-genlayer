@@ -1,0 +1,14 @@
+{
+  "contractASCII": true,
+  "contractClasses": [
+    "RuleWeftContract"
+  ],
+  "sourceSha256": "a98626be9b84e28b9523a5c3f89be50de596a5114919357b2593126104955d66",
+  "header": [
+    "# v0.3.0",
+    "# { \"Depends\": \"py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng\" }"
+  ],
+  "languageFilesScanned": 12,
+  "nonEnglishLetterLines": [],
+  "descriptionCharacters": 854
+}
