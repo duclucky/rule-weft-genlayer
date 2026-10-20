@@ -10,6 +10,8 @@
     "check": "npm run test && npm run build"
   },
   "dependencies": {
+    "genlayer-js": "2.0.0-rc.1",
+    "viem": "2.56.5",
     "@fontsource/plus-jakarta-sans": "5.2.8",
     "lucide-react": "1.59.0",
     "react": "19.3.1",

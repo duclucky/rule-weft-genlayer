@@ -95,3 +95,15 @@ returned non_ascii_letter_lines=[] and exit 0. App, adapter, domain, wallet and
 README copy manually reviewed as natural English; punctuation and technical
 identifiers remain. Phase 10 exit gate passed. Phase 11 publication follows the
 staged/history allowlist and exact-secret scan; browser-write proof stays pending.
+
+## Phase 12 build diagnosis
+
+The first Vercel build failed with TS2307 for `viem` and `genlayer-js`:
+Vercel installed the frontend workspace's declared dependencies, whereas these
+runtime imports were declared only at repository root. The frontend now declares
+the same pinned versions directly; no version upgrade or visual change is made.
+The failed deployment is preserved as an error, not a production success:
+rule-weft-genlayer-e74bt3vtq-duckys-projects-bc83c6a0.vercel.app.
+Root directory frontend, Vite, npm run build, dist and the public deployed-address
+environment variable are configured. Shared source outside root is enabled as
+required by the workspace imports. Private env files are excluded from upload.
