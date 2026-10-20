@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-20T02:40:18.907Z",
+  "request": {
+    "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+    "attempts": 0,
+    "currentAttempt": "",
+    "deadline": 1792464000,
+    "digest": "95fa7410e37fa7d480064a4725f6032e8604e6a0a2fd28173e7d5ec69ba6f893",
+    "id": "chrome-synthetic-20261020",
+    "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+    "payer": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+    "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+    "policyId": "diagnostics",
+    "policyTitle": "Shared diagnostic publication policy",
+    "reason": "",
+    "reserveGEN": "1",
+    "rules": [],
+    "status": "OPEN"
+  },
+  "accounting": {
+    "creditGEN": "0",
+    "escrowGEN": "1",
+    "invariant": true,
+    "receivedGEN": "10",
+    "withdrawnGEN": "9"
+  }
+}

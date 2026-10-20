@@ -43,7 +43,7 @@ export function createRuleWeftAdapter(options:Options):ContractAdapter{
    const envelope=await response.json();if(envelope.error)throw Error('The receipt is unavailable. Recheck the existing transaction before retrying.');
    const result=state(envelope.result);
    if(result.successful){onProgress('Finalized');return;}
-   if(result.status==='FINALIZED'||['UNDETERMINED','CANCELED','LEADER_TIMEOUT','VALIDATORS_TIMEOUT'].includes(result.status))throw new TerminalError('The transaction did not finalize successfully. Refresh the confirmed record before requesting another review.');
+   if(result.status==='FINALIZED')throw new TerminalError('The transaction did not finalize successfully. Refresh the confirmed record before requesting another review.');
    if(result.status==='ACCEPTED'&&!decided){onProgress('Accepted / decided');decided=true;}
    await new Promise(resolve=>setTimeout(resolve,options.pollMs??3000));
   }

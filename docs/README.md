@@ -236,10 +236,10 @@ is read dynamically, never hardcoded to1. A rejected transaction mutates nothing
 | COLLECTING | Publish own rule | submit_rule | PolicyDetail/ProductForm | App own-slot form/reload + real-SDK wrapper tests | Browser write pending |
 | RATIFYING | Agree to full slate | ratify | PolicyDetail/WriteButton | App exact-digest assent/reload + real-SDK tests | Browser write pending |
 | Expired incomplete policy | Cancel draft | cancel_policy | PolicyDetail/WriteButton | App expired-draft control/reload + real-SDK tests | Browser write pending |
-| ACTIVE | Pay for request | open_request | NewRequest/ProductForm | App purchase/detail + real-SDK exact1GEN sender/value tests | Browser write pending |
+| ACTIVE | Pay for request | open_request | NewRequest/ProductForm | App purchase/detail + real-SDK exact1GEN sender/value tests | FINALIZED SUCCESS; browser-open.json |
 | OPEN/RETRYABLE | Review/retry | review_request | RequestDetail/WriteButton | App review/reload/error tests PASS, temporal actions PASS | Browser write pending |
 | GRANTED | Use once | consume | RequestDetail/WriteButton | App legal control/reload + temporal/role + real-SDK tests | Browser write pending |
-| Expired OPEN/RETRYABLE/GRANTED | Recover purchase | recover | RequestDetail/WriteButton | App control/reload + exact-boundary/role + real-SDK tests | Browser write pending |
+| Expired OPEN/RETRYABLE/GRANTED | Recover purchase | recover | RequestDetail/WriteButton | App control/reload + exact-boundary/role + real-SDK tests | FINALIZED SUCCESS; browser-recover.json |
 | Positive own credit | Withdraw | withdraw | Account/WriteButton | Own-credit adapter call/reload test PASS | Browser write and native delivery pending |
 
 All nine rows have wrapper/control/test/finality/reload paths. UI and real-SDK

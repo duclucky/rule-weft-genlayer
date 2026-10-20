@@ -70,3 +70,45 @@ Latest full check:83 direct +4 Python metadata +23 Node +79 frontend=189 passing
 tests, no critical skips, semantic lint (one RuleWeftContract,9 writes/9 views),
 TypeScript, Vite build and emitted-API native-Node check PASS. Browser signatures
 must still produce actual hashes, successful finality and canonical consequences.
+
+## Browser purchase verified — 2026-10-20 02:37 UTC
+
+The owner clicked the local Request for 1 GEN control and signed through OKX.
+Transaction `0xf2b512c2ef659d94d707e56608b44bc79df433e0ef389ee7ac934b84849c906c`
+was observed in Chrome receipt polling and independently read as FINALIZED,
+execution SUCCESS, consensus agreement. The canonical payer is the selected
+Chrome wallet, the request is OPEN, its reserve is1GEN, and accounting reports
+received10GEN = escrow1GEN + withdrawn9GEN with credit0GEN and native balance1GEN.
+See studio-dev/browser-open.json and local/chrome-open-finalized.png.
+No intermediate accepted timestamp was observed for this purchase.
+
+The automated review click again returned eth_sendTransaction code4001 without
+a reference. A direct owner review/signature is pending. The evidence establishes
+a real browser purchase but does not yet establish the complete browser lifecycle.
+The cause of the earlier wallet rejections is not established. Do not substitute
+script signatures for the missing browser steps or count the pending review as
+a successful consequence.
+
+## Receipt projection correction — current195-test tree
+
+The owner-signed recover transaction finalized successfully as
+0x21a5a2218daf8b2975c96881040af3a5055f05f02520b25477dfffb86acffef1.
+Canonical state is EXPIRED, reserve0GEN, own credit1GEN. Withdrawal is pending.
+
+A controlled comparison of this exact receipt found direct SUCCESS but proxy
+ERROR: the gateway omitted the nested CONSENSUS_VALIDATOR_QUORUM_REACHED control
+code. Two focused regressions failed, then8/8 proxy tests passed after projecting
+only that known code and omitting arbitrary diagnostic text. The same live receipt
+then passed through the corrected local proxy. No validator config is forwarded.
+
+A separate real-SDK regression failed because an UNDETERMINED result discarded
+the pending hash. Only finalized unsuccessful results now release it; bounded
+waiting resumes the same hash without another signature. All14 adapter tests pass.
+Three expiry-label regressions failed, then all32 UI tests passed with recovery
+guidance while the canonical OPEN/RETRYABLE/GRANTED status remains unchanged.
+The accepted visual design is preserved.
+
+Current npm run check:83 direct +4 Python metadata +23 Node +85 frontend=195
+passing tests, semantic lint one contract/18 methods, API native ESM import,
+TypeScript and Vite production build PASS. CI and production must be refreshed
+for the new source commit. Phase15 remains open for the full browser journey.

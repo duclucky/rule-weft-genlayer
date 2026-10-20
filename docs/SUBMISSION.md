@@ -31,15 +31,16 @@ primary-wallet lifecycle, final four-source audit and current CI are verified.
 
 ## Verified facts
 
-One contract: RuleWeftContract;9 writes/9 views. Local check189 tests:83 direct,
-4 Python metadata,23 Node and79 frontend, plus emitted-API native-Node validation.
+One contract: RuleWeftContract;9 writes/9 views. Local check195 tests:83 direct,
+4 Python metadata,23 Node and85 frontend, plus emitted-API native-Node validation.
 Studio Dev script-signed proof covers grant/use, denial, conflict, review/retry,
 expiry recovery and exact native exits.9GEN received and withdrawn; no native
 balance or liabilities remain at the recorded canonical checkpoint.
 
 The live app has root200/name/React root and working IC proxy61997; actual Chrome
-reads real policy/history/USED state. Browser signatures have not succeeded yet:
-OKX connection works but eth_sendTransaction returns4001. A script signature
+reads real policy/history/USED state. Local Chrome purchase and recovery signatures finalized successfully; own1GEN
+withdrawal credit remains pending. Browser review/use is still unproven. Automated
+wallet calls returned4001; owner direct clicks successfully requested signatures. A script signature
 is not counted as browser proof. One3GEN cleanup deviation remains disclosed;
 corrective acceptance exits each used1GEN. No external execution, compliance,
 production audit, other-network deployment or existing adopter is claimed.

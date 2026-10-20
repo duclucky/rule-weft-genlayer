@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-20T02:21:02.1780738Z",
+  "at": "2026-10-20T02:55:09.857369+00:00",
   "tool": "unmodified parent tools/genlayer-grading-bot/genlayer-precheck.ps1",
   "command": "genlayer-precheck.ps1 -Project D:\\Genlayer Project\\rule-weft -Category projects -RepoUrl https://github.com/duclucky/rule-weft-genlayer -ExplorerUrl https://explorer-studio-dev.genlayer.com/address/0xFd64D6cD0816970CE6151aa5232cf8f4Bdf41D32 -NotesFile docs/SUBMISSION-DESCRIPTION.txt",
   "counts": {
@@ -12,11 +12,11 @@
     "gltest tests/": "PASS"
   },
   "testCounts": {
-    "frontend": 79,
+    "frontend": 85,
     "pythonMetadata": 4,
     "direct": 83,
     "node": 23,
-    "total": 189
+    "total": 195
   },
   "exitCode": 1,
   "exitReason": "Two reviewed static warnings; no BLOCKER",
@@ -42,6 +42,6 @@
       "item": "frontend actually calls the contract (not branding-only)"
     }
   ],
-  "browserWallet": "PENDING_REAL_EVIDENCE",
+  "browserWallet": "PARTIAL: owner-signed1GEN purchase and expiry recovery FINALIZED SUCCESS; withdrawal and review/use pending",
   "officialScoreClaimed": false
 }

@@ -8,7 +8,7 @@ and deterministic grounded labeling resolves which rules remain effective.
 Unresolved prohibition cycles never authorize a request.
 
 Status: deployed on Studio Dev; full delivery is in progress. The latest
-`npm run check` passed 87 Python, 23 Node and 79 frontend tests (189 total), plus
+`npm run check` passed 87 Python, 23 Node and 85 frontend tests (195 total), plus
 semantic lint, TypeScript and production build. Grant/use, denial, conflict,
 retry and expiry have finalized with real native GEN exits. Fresh reconciliation
 finds 47 lifecycle transactions, 9 expected request states, 9 GEN received and
@@ -17,7 +17,9 @@ script-signed network results, not CI or browser-write proof.
 No external execution, legal permission, ODRL conformance or adoption is claimed.
 
 Chrome RPC/CORS, OKX connection, restoration and logout have been verified.
-Actual browser-wallet writes remain pending. The deployed
+The owner signed a real1GEN browser purchase and expiry recovery, both finalized
+successfully. At the latest browser checkpoint, escrow is0GEN and own credit is
+1GEN awaiting withdrawal; the complete browser journey remains pending. The deployed
 contract is0xFd64D6cD0816970CE6151aa5232cf8f4Bdf41D32. See
 [verification](docs/VERIFICATION.md), [preserved recovery corrections](docs/evidence/studio-dev/RECOVERY-CORRECTION.md)
 and [specification](docs/README.md).
@@ -30,7 +32,8 @@ and [specification](docs/README.md).
 
 Verified root HTTP 200, RuleWeft title, React root, and production proxy HTTP 200
 with Studio Dev chain ID 61997. Actual Chrome loads canonical policies/history.
-This is live read proof; browser signatures and their lifecycle remain pending.
+Production has live read proof. Local Chrome purchase/recovery signatures are
+verified separately; full browser review/use and native withdrawal remain pending.
 
 ## Deployed Contract
 
@@ -62,8 +65,9 @@ separately. Never put keys in frontend environment variables.
 
 The app covers policy creation, author publication/ratification, requests,
 review/retry, one-time consumption, expiry recovery, history and own withdrawal.
-Controls follow canonical state and caller role. Actual browser-write evidence
-remains pending; real-SDK regression tests do not substitute for signatures.
+Controls follow canonical state and caller role. Browser purchase/recovery are
+proven; the complete browser workflow is pending. Real-SDK regression tests do
+not substitute for signatures.
 
 ## Deployment and reconciliation
 

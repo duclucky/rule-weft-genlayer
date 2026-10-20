@@ -1,22 +1,52 @@
 {
-  "at": "2026-10-20T02:00:15Z",
+  "at": "2026-10-20T02:23:04Z",
   "url": "https://rule-weft-genlayer.vercel.app",
-  "deploymentId": "dpl_F2wareZpsiNgWBRSdQ9HmYuTJTot",
-  "sourceCommit": "6de0d030966717f35ae8203206f902df1e10430e",
+  "deploymentId": "dpl_95uHzY1bNTCojHGaL5dJsNTXTwWX",
+  "sourceCommit": "51fc95418c5ed1402c5c93492d225938fe4c29e4",
   "rootDirectory": "frontend",
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "publicContractAddress": "0xFd64D6cD0816970CE6151aa5232cf8f4Bdf41D32",
   "checks": [
-    {"command": "curl.exe -s -I https://rule-weft-genlayer.vercel.app", "output": "HTTP/1.1 200 OK"},
-    {"command": "curl.exe -s https://rule-weft-genlayer.vercel.app", "outputContains": ["<title>RuleWeft", "<div id=\"root\"></div>"]},
-    {"command": "curl.exe POST /genlayer-rpc eth_chainId", "http": 200, "result": "0xf22d"}
+    {
+      "command": "curl.exe -s -I https://rule-weft-genlayer.vercel.app",
+      "output": "HTTP/1.1 200 OK"
+    },
+    {
+      "command": "curl.exe -s https://rule-weft-genlayer.vercel.app",
+      "outputContains": [
+        "<title>RuleWeft",
+        "<div id=\"root\"></div>"
+      ]
+    },
+    {
+      "command": "curl.exe POST /genlayer-rpc eth_chainId",
+      "http": 200,
+      "result": "0xf22d"
+    }
   ],
   "superseded": [
-    {"deploymentId": "dpl_3d1ZBLdgPM5mLnuXLMXp5sR7MJRm", "status": "ERROR", "reason": "Frontend runtime dependencies declared only in root package"},
-    {"deploymentId": "dpl_BMp66aLZWEEHUuafJycVB2Wf2YXd", "status": "READY_WITH_FAILED_API", "reason": "Extensionless Node ESM import; API returned FUNCTION_INVOCATION_FAILED"},
-    {"deploymentId": "dpl_6Pso766rWRp27m83pMBM6YGQB1nZ", "status": "SUPERSEDED", "reason": "Removed accidentally emitted duplicate proxy JavaScript; TypeScript remains single source"}
+    {
+      "deploymentId": "dpl_3d1ZBLdgPM5mLnuXLMXp5sR7MJRm",
+      "status": "ERROR",
+      "reason": "Frontend runtime dependencies declared only in root package"
+    },
+    {
+      "deploymentId": "dpl_BMp66aLZWEEHUuafJycVB2Wf2YXd",
+      "status": "READY_WITH_FAILED_API",
+      "reason": "Extensionless Node ESM import; API returned FUNCTION_INVOCATION_FAILED"
+    },
+    {
+      "deploymentId": "dpl_6Pso766rWRp27m83pMBM6YGQB1nZ",
+      "status": "SUPERSEDED",
+      "reason": "Removed accidentally emitted duplicate proxy JavaScript; TypeScript remains single source"
+    },
+    {
+      "deploymentId": "dpl_F2wareZpsiNgWBRSdQ9HmYuTJTot",
+      "status": "SUPERSEDED",
+      "reason": "New verified production revision fixes Chrome native-date submission and safe wallet failure diagnostics"
+    }
   ],
   "browserWalletWrites": "PENDING_REAL_EVIDENCE",
   "passedReadHostingChecks": true

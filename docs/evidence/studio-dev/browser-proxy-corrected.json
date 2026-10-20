@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-20T02:50:32.086Z",
+  "hash": "0x21a5a2218daf8b2975c96881040af3a5055f05f02520b25477dfffb86acffef1",
+  "proxy": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true
+  }
+}

@@ -17,6 +17,13 @@ describe('complete named page map',()=>{
  it('makes missing deployment explicit on data pages',async()=>{render(<MemoryRouter initialEntries={['/policies']}><App/></MemoryRouter>);expect(await screen.findByRole('heading',{name:'We could not load this yet'})).toBeTruthy();expect(screen.getAllByText(/Deployment is not configured yet/).length).toBeGreaterThan(0);});
 });
 describe('realistic boundary feedback through an injected test adapter only',()=>{
+ for(const status of ['OPEN','RETRYABLE','GRANTED'])it(`explains expiry recovery while the canonical phase remains ${status}`,async()=>{
+  const a=adapter();a.request=vi.fn(async()=>({...item,status,deadline:1}));mount('/requests/test-request',a);await wallet();
+  expect(await screen.findByRole('heading',{name:'Recovery available'})).toBeTruthy();
+  expect(screen.getByRole('button',{name:'Recover 1 GEN purchase'})).toBeTruthy();
+  expect(screen.queryByRole('button',{name:/Review this request|Try review again|Use permission once/})).toBeNull();
+  expect(screen.getByText(`Canonical status: ${status}`)).toBeTruthy();expect(a.write).not.toHaveBeenCalled();
+ });
  it('restores only the previously selected authorized provider without prompting and forgets it on logout',async()=>{localStorage.setItem('ruleweft.wallet','Browser wallet');const request=vi.fn(async({method}:{method:string})=>method==='eth_accounts'?[payer]:'0xf22d');Object.defineProperty(window,'ethereum',{configurable:true,value:{request}});mount('/account');fireEvent.click(await screen.findByRole('button',{name:/0x1111/}));expect(request.mock.calls.map(x=>x[0].method)).toEqual(['eth_accounts']);fireEvent.click(screen.getByRole('button',{name:'Disconnect'}));expect(localStorage.getItem('ruleweft.wallet')).toBeNull();});
  it('does not prompt or restore when prior provider has no authorized accounts',async()=>{localStorage.setItem('ruleweft.wallet','Browser wallet');const request=vi.fn(async()=>[]);Object.defineProperty(window,'ethereum',{configurable:true,value:{request}});mount('/account');await waitFor(()=>expect(request).toHaveBeenCalled());expect(screen.getByRole('button',{name:'Connect wallet'})).toBeTruthy();expect(request.mock.calls.every(c=>!(c as unknown[]).includes('eth_requestAccounts'))).toBe(true);});
  it('does not expose requester write before wallet selection',async()=>{mount('/requests/test-request');await screen.findByRole('heading',{name:'Ready for review'});expect(screen.queryByRole('button',{name:'Review this request'})).toBeNull();});

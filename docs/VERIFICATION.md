@@ -156,3 +156,25 @@ chrome-synthetic-20261020 with a recoverable1GEN purchase and deadline09:40UTC+7
 If the deadline becomes too close before purchase, update it through the UI;
 never change an already-created canonical request. No GEN was deposited by this
 browser at this checkpoint.
+
+## Browser purchase/recovery and receipt repair — 2026-10-20T02:54Z
+
+Owner-signed Chrome/OKX open_request f2b512c2ef659d94d707e56608b44bc79df433e0ef389ee7ac934b84849c906c
+and recover21a5a2218daf8b2975c96881040af3a5055f05f02520b25477dfffb86acffef1
+both read FINALIZED SUCCESS with consensus agreement. The exact1GEN purchase
+is now EXPIRED, reserve0GEN, credit1GEN. Native balance1GEN remains until the
+owner signs Account withdrawal. No withdrawal or complete browser-use claim.
+
+The raw/proxy comparison exposed a dropped nested quorum-reached control code.
+The corrected gateway projects only the known code; the same live receipt now
+reads SUCCESS through the local proxy. Two failing proxy regressions became8/8
+PASS; an undetermined-hash resume regression failed then14/14 adapter tests
+passed; three expired-phase UI regressions failed then32/32 UI tests passed.
+No contract source, validator rule or visual design was changed.
+
+Full npm run check completed at02:54:21Z with83 direct,4 Python metadata,23 Node
+and85 frontend=195PASS, lint one recognized class/18 methods, native emitted API
+import, TypeScript and production build PASS. The unmodified parent grader
+returned0BLOCKER,2WARN,7AUTO; dynamic npm run check and gltest PASS, all five
+machine gates PASS. Exit1 is its reviewed-warning status, not a clean zero exit.
+Phase15 and Gate13 execution remain pending; Phase16 has not started.

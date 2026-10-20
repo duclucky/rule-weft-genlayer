@@ -8,8 +8,9 @@ const payer='0x1111111111111111111111111111111111111111',destination='0x22222222
 const endpoint='https://offline-ruleweft.invalid';
 const sends:{method:string;params?:unknown[]}[]=[];
 let receipt=0,materializedResult=1,failSend=false;
+let receiptStatuses:string[]=[];
 const provider:Provider={async request(input){if(input.method==='eth_accounts')return [payer];if(input.method==='eth_chainId')return '0xf22d';if(input.method==='eth_sendTransaction'){if(failSend)throw {code:-32602,message:'private-validator-config-must-not-appear',node_config:{secret:'hidden'}};sends.push(input);return tx;}throw Error('Unexpected provider request '+input.method);}};
-beforeEach(()=>{sends.length=0;receipt=0;materializedResult=1;failSend=false;vi.stubGlobal('fetch',vi.fn(async(_url,options)=>{
+beforeEach(()=>{sends.length=0;receipt=0;materializedResult=1;failSend=false;receiptStatuses=[];vi.stubGlobal('fetch',vi.fn(async(_url,options)=>{
  const {id,method,params}=JSON.parse(String(options?.body));let result:unknown;
  if(method==='eth_getTransactionCount')result='0x0';
  else if(method==='eth_estimateGas')result='0x30d40';
@@ -23,12 +24,19 @@ beforeEach(()=>{sends.length=0;receipt=0;materializedResult=1;failSend=false;vi.
   else throw Error('Unexpected eth_call '+decoded.functionName);
  }
  else if(method==='sim_estimateTransactionFees')result={recommendedPreset:{distribution:createFeesDistribution({}),feeValue:'100',messageAllocations:[]}};
- else if(method==='eth_getTransactionByHash')result={status:++receipt===1?'ACCEPTED':'FINALIZED',execution_result:'SUCCESS',result:materializedResult};
+ else if(method==='eth_getTransactionByHash')result={status:receiptStatuses.shift()??(++receipt===1?'ACCEPTED':'FINALIZED'),execution_result:'SUCCESS',result:materializedResult};
  else throw Error('Unexpected offline RPC '+method);
  return new Response(JSON.stringify({jsonrpc:'2.0',id,result},(_k,v)=>typeof v==='bigint'?v.toString():v),{status:200,headers:{'Content-Type':'application/json'}});
 }));});
 afterEach(()=>vi.unstubAllGlobals());
 describe('actual project adapter through the real SDK, intercepted I/O only',()=>{
+ it('retains an undetermined hash across a bounded wait and rechecks it without another signature',async()=>{
+  receiptStatuses=['UNDETERMINED','FINALIZED'];const stages:string[]=[];
+  const a=createRuleWeftAdapter({endpoint,address:destination,account:payer,provider,pollMs:0,maxPolls:1});
+  await expect(a.write('review_request',['undetermined-resume'],'0',p=>stages.push(p))).rejects.toThrow('Still waiting for finality');
+  await a.write('review_request',['undetermined-resume'],'0',p=>stages.push(p));
+  expect(sends).toHaveLength(1);expect(stages.at(-1)).toBe('Finalized');
+ });
  it('reports only the failed wallet method and numeric code without claiming an ambiguous send never happened',async()=>{failSend=true;const a=createRuleWeftAdapter({endpoint,address:destination,account:payer,provider,pollMs:0});try{await a.write('consume',['r'],'0',()=>{});throw Error('Expected wallet rejection');}catch(e){const message=(e as Error).message;expect(message).toContain('eth_sendTransaction');expect(message).toContain('-32602');expect(message).not.toMatch(/private-validator|node_config|hidden|did not submit/);}});
  it('does not report finalized success when leader returned but consensus rejected application',async()=>{materializedResult=2;const stages:string[]=[];await expect(createRuleWeftAdapter({endpoint,address:destination,account:payer,provider,pollMs:0,maxPolls:3}).write('consume',['r'],'0',p=>stages.push(p))).rejects.toThrow('did not finalize successfully');expect(stages).not.toContain('Finalized');});
  for(const [command,args] of [
