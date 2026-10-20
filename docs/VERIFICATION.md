@@ -107,3 +107,14 @@ rule-weft-genlayer-e74bt3vtq-duckys-projects-bc83c6a0.vercel.app.
 Root directory frontend, Vite, npm run build, dist and the public deployed-address
 environment variable are configured. Shared source outside root is enabled as
 required by the workspace imports. Private env files are excluded from upload.
+
+## API runtime regression
+
+Production root GET returned200 with RuleWeft title and React root, but POST
+/genlayer-rpc returned500 FUNCTION_INVOCATION_FAILED. The exact deployment log
+identified ERR_MODULE_NOT_FOUND for extensionless frontend/rpc-proxy. The API
+import now uses .js for emitted Node ESM, with a separate browser-free TypeScript
+configuration. Native Node import of emitted files and GET405 passed; this
+check is now part of npm run check. A READY deployment alone is not app proof.
+The first public CI run39355602849 completed SUCCESS for commita1bdbee; newer
+commits require their own result before a current-CI completion claim.

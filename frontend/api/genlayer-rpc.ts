@@ -1,4 +1,4 @@
-import {forwardRpc} from '../rpc-proxy';
+import {forwardRpc} from '../rpc-proxy.js';
 interface Response {status:(n:number)=>Response;json:(x:unknown)=>void}
 export default async function handler(req:{method?:string;body:unknown},res:Response){
  if(req.method!=='POST'){res.status(405).json({error:'POST required'});return;}
