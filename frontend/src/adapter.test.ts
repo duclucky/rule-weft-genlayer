@@ -7,9 +7,9 @@ import type {Provider} from './domain';
 const payer='0x1111111111111111111111111111111111111111',destination='0x2222222222222222222222222222222222222222',tx='0x'+'3'.repeat(64);
 const endpoint='https://offline-ruleweft.invalid';
 const sends:{method:string;params?:unknown[]}[]=[];
-let receipt=0;
+let receipt=0,materializedResult=1;
 const provider:Provider={async request(input){if(input.method==='eth_accounts')return [payer];if(input.method==='eth_chainId')return '0xf22d';if(input.method==='eth_sendTransaction'){sends.push(input);return tx;}throw Error('Unexpected provider request '+input.method);}};
-beforeEach(()=>{sends.length=0;receipt=0;vi.stubGlobal('fetch',vi.fn(async(_url,options)=>{
+beforeEach(()=>{sends.length=0;receipt=0;materializedResult=1;vi.stubGlobal('fetch',vi.fn(async(_url,options)=>{
  const {id,method,params}=JSON.parse(String(options?.body));let result:unknown;
  if(method==='eth_getTransactionCount')result='0x0';
  else if(method==='eth_estimateGas')result='0x30d40';
@@ -23,12 +23,13 @@ beforeEach(()=>{sends.length=0;receipt=0;vi.stubGlobal('fetch',vi.fn(async(_url,
   else throw Error('Unexpected eth_call '+decoded.functionName);
  }
  else if(method==='sim_estimateTransactionFees')result={recommendedPreset:{distribution:createFeesDistribution({}),feeValue:'100',messageAllocations:[]}};
- else if(method==='eth_getTransactionByHash')result={status:++receipt===1?'ACCEPTED':'FINALIZED',execution_result:'SUCCESS'};
+ else if(method==='eth_getTransactionByHash')result={status:++receipt===1?'ACCEPTED':'FINALIZED',execution_result:'SUCCESS',result:materializedResult};
  else throw Error('Unexpected offline RPC '+method);
  return new Response(JSON.stringify({jsonrpc:'2.0',id,result},(_k,v)=>typeof v==='bigint'?v.toString():v),{status:200,headers:{'Content-Type':'application/json'}});
 }));});
 afterEach(()=>vi.unstubAllGlobals());
 describe('actual project adapter through the real SDK, intercepted I/O only',()=>{
+ it('does not report finalized success when leader returned but consensus rejected application',async()=>{materializedResult=2;const stages:string[]=[];await expect(createRuleWeftAdapter({endpoint,address:destination,account:payer,provider,pollMs:0,maxPolls:3}).write('consume',['r'],'0',p=>stages.push(p))).rejects.toThrow('did not finalize successfully');expect(stages).not.toContain('Finalized');});
  for(const [command,args] of [
   ['create_policy',['p','Policy',destination,'0x4444444444444444444444444444444444444444',destination,2000000000,2000100000]],
   ['submit_rule',['p',0,'ALLOW','Exact wording','']],['ratify',['p','digest']],['cancel_policy',['p']],['review_request',['r']],['consume',['r']],['recover',['r']],['withdraw',[]]

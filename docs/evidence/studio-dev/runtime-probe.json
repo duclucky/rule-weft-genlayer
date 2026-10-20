@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-20T00:16:32.629Z",
+  "at": "2026-10-20T00:18:32.095Z",
   "command": "node scripts/runtime-probe.mjs",
   "scope": "Unsigned exact-source schema and constructor, no keys, finality or value.",
   "network": {
@@ -11,7 +11,7 @@
   "identity": {
     "network": "Studio Dev",
     "chainId": 61997,
-    "sourceCommit": "b7bffdd52c0bc9b11cc99bf956a95bed31a1db78",
+    "sourceCommit": "f498e18319a3d0569dab7400c8bf810079969d9a",
     "sourceSha256": "a98626be9b84e28b9523a5c3f89be50de596a5114919357b2593126104955d66",
     "api": "v0.3.0",
     "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",

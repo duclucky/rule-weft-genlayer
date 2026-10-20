@@ -5,5 +5,6 @@ import {contractArgs} from './contract-args.mjs';
 const a='0x1111111111111111111111111111111111111111';
 test('policy author and issuer ABI arguments are binary addresses',()=>{const args=contractArgs('create_policy',['p','Title',a,a,a,123,456]);assert(args.slice(2,5).every(x=>x instanceof CalldataAddress));assert.equal(args[0],'p');});
 test('credit owner ABI argument is binary, already converted addresses are preserved',()=>{const args=contractArgs('get_credit',[a]);assert(args[0] instanceof CalldataAddress);assert.equal(contractArgs('get_credit',args)[0],args[0]);});
+test('permit owner ABI argument is binary while the request ID stays text',()=>{const args=contractArgs('can_consume',['r',a]);assert.equal(args[0],'r');assert(args[1] instanceof CalldataAddress);});
 test('address-looking action prose stays exact text',()=>assert.deepEqual(contractArgs('open_request',['r','p',a,'digest',123]),['r','p',a,'digest',123]));
 test('invalid ABI address fails before simulation or signing',()=>assert.throws(()=>contractArgs('get_credit',['not-address']),/Invalid contract address/));

@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-20T00:49:58.738Z",
+  "request": {
+    "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+    "attempts": 1,
+    "currentAttempt": "unused-grant:1",
+    "deadline": 1792457577,
+    "digest": "43621ecd610810fa43eaf1acb5b89d038b1de07891f132bc84dd56ae620b9ebc",
+    "id": "unused-grant",
+    "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+    "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+    "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+    "policyId": "diagnostics",
+    "policyTitle": "Shared diagnostic publication policy",
+    "reason": "R0 applies as a general ALLOW for external diagnostic log publication. R1 applies as a BLOCK on external diagnostic log publication and expressly overrides R0 (its declared target). R2 applies because the action involves an external diagnostic bundle consisting entirely of synthetic benchmark logs w",
+    "reserveGEN": "1",
+    "rules": [
+      {
+        "applicability": "APPLIES",
+        "exception": "NO_OVERRIDE",
+        "id": "R0",
+        "label": "IN"
+      },
+      {
+        "applicability": "APPLIES",
+        "exception": "OVERRIDES",
+        "id": "R1",
+        "label": "OUT"
+      },
+      {
+        "applicability": "APPLIES",
+        "exception": "OVERRIDES",
+        "id": "R2",
+        "label": "IN"
+      }
+    ],
+    "status": "GRANTED"
+  },
+  "canConsume": true,
+  "expected": "GRANTED"
+}

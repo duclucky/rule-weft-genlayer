@@ -9,6 +9,8 @@ export function state(r){
  const normalized=r.txExecutionResultName!==undefined?(r.txExecutionResultName==='FINISHED_WITH_RETURN'?'SUCCESS':'ERROR'):r.txExecutionResult!==undefined?(Number(r.txExecutionResult)===1?'SUCCESS':'ERROR'):null;
  const results=[r.execution_result,...rows.filter(x=>!(normalized==='SUCCESS'&&x?.mode==='validator'&&x.vote==='idle'&&(x.controlCode??x.genvm_result?.error_code)==='CONSENSUS_VALIDATOR_QUORUM_REACHED')).map(x=>x?.execution_result),normalized].filter(x=>x!==undefined&&x!==null);
  const execution=results.length===0?'UNKNOWN':results.every(x=>x==='SUCCESS')?'SUCCESS':'ERROR';
- return {status,execution,successful:status==='FINALIZED'&&execution==='SUCCESS'};
+ const decisions=[r.resultName,r.result_name,r.result].filter(x=>x!==undefined&&x!==null);
+ const agreed=decisions.every(x=>x===1||x==='1'||x==='MAJORITY_AGREE'||x==='AGREE');
+ return {status,execution,successful:status==='FINALIZED'&&execution==='SUCCESS'&&agreed};
 }
 export function safeReceipt(r){return {...state(r),hash:hash(r?.hash??r?.transactionHash??r?.txId),from:address(r?.from_address??r?.from??r?.sender),to:address(r?.to_address??r?.to??r?.recipient)};}

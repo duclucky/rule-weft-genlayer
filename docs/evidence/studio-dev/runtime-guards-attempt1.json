@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-20T00:25:05.660Z",
+  "command": "node scripts/runtime-guards.mjs",
+  "scope": "Unsigned selected-runtime guard checks; not real failed transactions.",
+  "network": {
+    "network": "Studio Dev",
+    "chainId": 61997,
+    "rpc": "https://studio-next.genlayer.com/api",
+    "explorer": "https://explorer-studio-dev.genlayer.com"
+  },
+  "address": "0xFd64D6cD0816970CE6151aa5232cf8f4Bdf41D32",
+  "checks": [
+    {
+      "name": "duplicate-author",
+      "expected": "DISTINCT_AUTHORS",
+      "executionResult": "RPC_REJECTED",
+      "expectedMarker": false,
+      "error": {
+        "kind": "RpcRejected",
+        "code": -32000,
+        "markers": {
+          "timeout": true,
+          "insufficientFunds": false,
+          "rolledBack": false,
+          "feeCap": false
+        }
+      },
+      "passed": false
+    },
+    {
+      "name": "wrong-cancel-caller",
+      "expected": "POLICY_CREATOR",
+      "executionResult": "RPC_REJECTED",
+      "expectedMarker": false,
+      "error": {
+        "kind": "RpcRejected",
+        "code": -32000,
+        "markers": {
+          "timeout": true,
+          "insufficientFunds": false,
+          "rolledBack": false,
+          "feeCap": false
+        }
+      },
+      "passed": false
+    },
+    {
+      "name": "missing-purchase-payment",
+      "expected": "EXACT_1_GEN",
+      "executionResult": "RPC_REJECTED",
+      "expectedMarker": false,
+      "error": {
+        "kind": "RpcRejected",
+        "code": -32000,
+        "markers": {
+          "timeout": true,
+          "insufficientFunds": false,
+          "rolledBack": false,
+          "feeCap": false
+        }
+      },
+      "passed": false
+    }
+  ],
+  "canonicalUnchanged": true,
+  "passed": false
+}

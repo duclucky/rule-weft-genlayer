@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-20T01:12:56.701Z",
+  "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "hash": "0x846e366f6434ec6f1a27cc1c4b372735d423159b46e9e59e9b78140123864d07",
+  "creditGEN": "1",
+  "passed": true,
+  "contractDecreaseGEN": "1",
+  "recipientIncreaseGEN": "0.999873694749999177",
+  "creditAfterGEN": "0",
+  "receipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true,
+    "hash": "0x846e366f6434ec6f1a27cc1c4b372735d423159b46e9e59e9b78140123864d07",
+    "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+    "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+  }
+}

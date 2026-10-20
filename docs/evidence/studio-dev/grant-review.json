@@ -1,0 +1,48 @@
+{
+  "observedAt": "2026-10-20T00:33:50.064Z",
+  "scope": "Canonical view reads; no transaction.",
+  "request": {
+    "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+    "attempts": 1,
+    "currentAttempt": "synthetic-publication:1",
+    "deadline": 1792456885,
+    "digest": "4dfce6047fa7bb32548f6a8e2b9ef8123a623980d2460b9a2b1266ee8e7715d9",
+    "id": "synthetic-publication",
+    "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+    "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+    "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+    "policyId": "diagnostics",
+    "policyTitle": "Shared diagnostic publication policy",
+    "reason": "The action is external publication of diagnostic material, so R0 applies. R1 also applies because it prohibits external publication of diagnostic logs and expressly overrides R0 for this action. R2 applies because the bundle consists entirely of synthetic benchmark logs and no customer information, ",
+    "reserveGEN": "1",
+    "rules": [
+      {
+        "applicability": "APPLIES",
+        "exception": "NO_OVERRIDE",
+        "id": "R0",
+        "label": "IN"
+      },
+      {
+        "applicability": "APPLIES",
+        "exception": "OVERRIDES",
+        "id": "R1",
+        "label": "OUT"
+      },
+      {
+        "applicability": "APPLIES",
+        "exception": "OVERRIDES",
+        "id": "R2",
+        "label": "IN"
+      }
+    ],
+    "status": "GRANTED"
+  },
+  "canConsume": true,
+  "attempt": {
+    "id": "synthetic-publication:1",
+    "reason": "The action is external publication of diagnostic material, so R0 applies. R1 also applies because it prohibits external publication of diagnostic logs and expressly overrides R0 for this action. R2 applies because the bundle consists entirely of synthetic benchmark logs and no customer information, ",
+    "requestId": "synthetic-publication",
+    "status": "GRANTED",
+    "timestamp": 1792456349
+  }
+}

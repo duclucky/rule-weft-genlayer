@@ -1,0 +1,27 @@
+name: Verify RuleWeft
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m venv .venv
+      - run: .venv/Scripts/python -m pip install -r requirements.lock
+      - run: npm ci
+      - run: npm run check
+        env:
+          PYTHONUTF8: '1'
+          VITE_CONTRACT_ADDRESS: '0xFd64D6cD0816970CE6151aa5232cf8f4Bdf41D32'

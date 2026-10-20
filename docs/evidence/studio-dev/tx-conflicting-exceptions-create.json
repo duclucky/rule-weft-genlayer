@@ -1,0 +1,61 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "sourceCommit": "f498e18319a3d0569dab7400c8bf810079969d9a",
+  "sourceSha256": "a98626be9b84e28b9523a5c3f89be50de596a5114919357b2593126104955d66",
+  "api": "v0.3.0",
+  "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+  "genvm": "v0.6.0-rc5",
+  "sdk": "2.0.0-rc.1",
+  "contractVersion": "RW_V1",
+  "operation": "create_policy",
+  "args": [
+    "conflicting-exceptions",
+    "Mutually conflicting diagnostic exceptions",
+    "0x2818B7BC95a05Df416E7c2e7F928e12FE4715cFD",
+    "0xc73a3DED1164883C41aB87ED13a279B2b4CFD4B8",
+    "0x2818B7BC95a05Df416E7c2e7F928e12FE4715cFD",
+    1792460278,
+    1792543078
+  ],
+  "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "valueGEN": "0",
+  "feeReserveGEN": "0.000378516000010352",
+  "before": {
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "0",
+      "invariant": true,
+      "receivedGEN": "2",
+      "withdrawnGEN": "2"
+    },
+    "contractBalanceGEN": "0",
+    "actorBalanceGEN": "23.162870891749994928",
+    "ownCreditGEN": "0"
+  },
+  "preparedAt": "2026-10-20T00:38:02.611Z",
+  "status": "FINALIZED",
+  "hash": "0x6a6aa724aa9a984fe1cf7992bb93476a154e6f1bbdd7c223a5e77105b76e529e",
+  "executionResult": "SUCCESS",
+  "finalizedObservedAt": "2026-10-20T00:38:47.421Z",
+  "transactionExplorer": "https://explorer-studio-dev.genlayer.com/tx/0x6a6aa724aa9a984fe1cf7992bb93476a154e6f1bbdd7c223a5e77105b76e529e",
+  "receipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true,
+    "hash": "0x6a6aa724aa9a984fe1cf7992bb93476a154e6f1bbdd7c223a5e77105b76e529e",
+    "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+    "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+  },
+  "after": {
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "0",
+      "invariant": true,
+      "receivedGEN": "2",
+      "withdrawnGEN": "2"
+    },
+    "contractBalanceGEN": "0",
+    "actorBalanceGEN": "23.162792258249994105"
+  }
+}

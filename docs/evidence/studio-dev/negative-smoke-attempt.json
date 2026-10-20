@@ -1,0 +1,27 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "sourceCommit": "f498e18319a3d0569dab7400c8bf810079969d9a",
+  "sourceSha256": "a98626be9b84e28b9523a5c3f89be50de596a5114919357b2593126104955d66",
+  "api": "v0.3.0",
+  "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+  "genvm": "v0.6.0-rc5",
+  "sdk": "2.0.0-rc.1",
+  "contractVersion": "RW_V1",
+  "operation": "expected-duplicate-author-rejection",
+  "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "valueGEN": "0",
+  "feeReserveGEN": "0.000378513600010352",
+  "before": {
+    "policies": "[{\"collectDeadline\": 1792459232, \"creator\": \"0xbd733bc56ec4a55fa25c068b9306b0171335d199\", \"digest\": \"0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7\", \"expiry\": 1792542032, \"id\": \"diagnostics\", \"issuer\": \"0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd\", \"rules\": [{\"author\": \"0xbd733bc56ec4a55fa25c068b9306b0171335d199\", \"effect\": \"ALLOW\", \"id\": \"R0\", \"ratified\": true, \"submitted\": true, \"target\": \"\", \"text\": \"Allow external publication of diagnostic logs.\"}, {\"author\": \"0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd\", \"effect\": \"BLOCK\", \"id\": \"R1\", \"ratified\": true, \"submitted\": true, \"target\": \"R0\", \"text\": \"Prohibit external publication of diagnostic logs. This restriction overrides R0, the general permission to publish diagnostic logs.\"}, {\"author\": \"0xc73a3ded1164883c41ab87ed13a279b2b4cfd4b8\", \"effect\": \"ALLOW\", \"id\": \"R2\", \"ratified\": true, \"submitted\": true, \"target\": \"R1\", \"text\": \"As an exception to R1, allow external diagnostic bundles consisting entirely of synthetic benchmark logs. This exception does not cover logs containing customer information.\"}], \"status\": \"ACTIVE\", \"title\": \"Shared diagnostic publication policy\"}]",
+    "requests": "[]",
+    "accounting": "{\"creditGEN\": \"0\", \"escrowGEN\": \"0\", \"invariant\": true, \"receivedGEN\": \"0\", \"withdrawnGEN\": \"0\"}",
+    "nativeBalanceGEN": "0"
+  },
+  "preparedAt": "2026-10-20T00:28:46.629Z",
+  "status": "FINALIZED",
+  "hash": "0x3092a67ba905f434ba0b76ceab5cafddaa7fcbc7459426069d1fde1a63b48a23",
+  "executionResult": "ERROR",
+  "expectedFailure": true,
+  "finalizedObservedAt": "2026-10-20T00:30:35.821Z"
+}

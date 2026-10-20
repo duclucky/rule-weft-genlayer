@@ -1,0 +1,1496 @@
+{
+  "at": "2026-10-20T01:45:22.970Z",
+  "command": "node scripts/evidence-summary.mjs",
+  "network": {
+    "network": "Studio Dev",
+    "chainId": 61997,
+    "rpc": "https://studio-next.genlayer.com/api",
+    "explorer": "https://explorer-studio-dev.genlayer.com"
+  },
+  "address": "0xFd64D6cD0816970CE6151aa5232cf8f4Bdf41D32",
+  "sourceCommit": "f498e18319a3d0569dab7400c8bf810079969d9a",
+  "sourceSha256": "a98626be9b84e28b9523a5c3f89be50de596a5114919357b2593126104955d66",
+  "scope": "Fresh script-signed lifecycle state; actual browser proof is separate.",
+  "policies": [
+    {
+      "collectDeadline": 1792459232,
+      "creator": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "digest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+      "expiry": 1792542032,
+      "id": "diagnostics",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "rules": [
+        {
+          "author": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "effect": "ALLOW",
+          "id": "R0",
+          "ratified": true,
+          "submitted": true,
+          "target": "",
+          "text": "Allow external publication of diagnostic logs."
+        },
+        {
+          "author": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+          "effect": "BLOCK",
+          "id": "R1",
+          "ratified": true,
+          "submitted": true,
+          "target": "R0",
+          "text": "Prohibit external publication of diagnostic logs. This restriction overrides R0, the general permission to publish diagnostic logs."
+        },
+        {
+          "author": "0xc73a3ded1164883c41ab87ed13a279b2b4cfd4b8",
+          "effect": "ALLOW",
+          "id": "R2",
+          "ratified": true,
+          "submitted": true,
+          "target": "R1",
+          "text": "As an exception to R1, allow external diagnostic bundles consisting entirely of synthetic benchmark logs. This exception does not cover logs containing customer information."
+        }
+      ],
+      "status": "ACTIVE",
+      "title": "Shared diagnostic publication policy"
+    },
+    {
+      "collectDeadline": 1792460278,
+      "creator": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "digest": "f7b7c80646d3d46a6bdba77ba9aace53e4f7d7a947c73a23a9e340f611993d23",
+      "expiry": 1792543078,
+      "id": "conflicting-exceptions",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "rules": [
+        {
+          "author": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "effect": "ALLOW",
+          "id": "R0",
+          "ratified": true,
+          "submitted": true,
+          "target": "R1",
+          "text": "Allow external publication of synthetic diagnostic logs. For exactly this action, this rule overrides the prohibition in R1."
+        },
+        {
+          "author": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+          "effect": "BLOCK",
+          "id": "R1",
+          "ratified": true,
+          "submitted": true,
+          "target": "R0",
+          "text": "Prohibit external publication of all diagnostic logs, including synthetic diagnostic logs. For exactly this action, this rule overrides the permission in R0."
+        },
+        {
+          "author": "0xc73a3ded1164883c41ab87ed13a279b2b4cfd4b8",
+          "effect": "ALLOW",
+          "id": "R2",
+          "ratified": true,
+          "submitted": true,
+          "target": "",
+          "text": "Allow viewing diagnostic logs only on an internal dashboard; external publication is outside this permission."
+        }
+      ],
+      "status": "ACTIVE",
+      "title": "Mutually conflicting diagnostic exceptions"
+    },
+    {
+      "collectDeadline": 1792457656,
+      "creator": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "digest": "",
+      "expiry": 1792461226,
+      "id": "expired-draft",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "rules": [
+        {
+          "author": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "effect": "",
+          "id": "R0",
+          "ratified": false,
+          "submitted": false,
+          "target": "",
+          "text": ""
+        },
+        {
+          "author": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+          "effect": "",
+          "id": "R1",
+          "ratified": false,
+          "submitted": false,
+          "target": "",
+          "text": ""
+        },
+        {
+          "author": "0xc73a3ded1164883c41ab87ed13a279b2b4cfd4b8",
+          "effect": "",
+          "id": "R2",
+          "ratified": false,
+          "submitted": false,
+          "target": "",
+          "text": ""
+        }
+      ],
+      "status": "CANCELLED",
+      "title": "Expired unratified authoring window"
+    }
+  ],
+  "requests": [
+    {
+      "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+      "attempts": 1,
+      "currentAttempt": "synthetic-publication:1",
+      "deadline": 1792456885,
+      "digest": "4dfce6047fa7bb32548f6a8e2b9ef8123a623980d2460b9a2b1266ee8e7715d9",
+      "id": "synthetic-publication",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+      "policyId": "diagnostics",
+      "policyTitle": "Shared diagnostic publication policy",
+      "reason": "The action is external publication of diagnostic material, so R0 applies. R1 also applies because it prohibits external publication of diagnostic logs and expressly overrides R0 for this action. R2 applies because the bundle consists entirely of synthetic benchmark logs and no customer information, ",
+      "reserveGEN": "0",
+      "rules": [
+        {
+          "applicability": "APPLIES",
+          "exception": "NO_OVERRIDE",
+          "id": "R0",
+          "label": "IN"
+        },
+        {
+          "applicability": "APPLIES",
+          "exception": "OVERRIDES",
+          "id": "R1",
+          "label": "OUT"
+        },
+        {
+          "applicability": "APPLIES",
+          "exception": "OVERRIDES",
+          "id": "R2",
+          "label": "IN"
+        }
+      ],
+      "status": "USED"
+    },
+    {
+      "action": "Publish an external diagnostic bundle containing production diagnostic logs with customer information.",
+      "attempts": 1,
+      "currentAttempt": "customer-publication:1",
+      "deadline": 1792457087,
+      "digest": "7c2878b389beb576608df10fa63eaf8bce2c219aac1cc522c6fb0561003820ef",
+      "id": "customer-publication",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+      "policyId": "diagnostics",
+      "policyTitle": "Shared diagnostic publication policy",
+      "reason": "The action is external publication of diagnostic logs, so R0 applies. R1 also applies because it prohibits that same action and expressly overrides R0, its declared target, for external publication of diagnostic logs. R2 only applies to bundles consisting entirely of synthetic benchmark logs and exp",
+      "reserveGEN": "0",
+      "rules": [
+        {
+          "applicability": "APPLIES",
+          "exception": "NO_OVERRIDE",
+          "id": "R0",
+          "label": "OUT"
+        },
+        {
+          "applicability": "APPLIES",
+          "exception": "OVERRIDES",
+          "id": "R1",
+          "label": "IN"
+        },
+        {
+          "applicability": "NOT_APPLICABLE",
+          "exception": "NO_OVERRIDE",
+          "id": "R2",
+          "label": "INACTIVE"
+        }
+      ],
+      "status": "DENIED"
+    },
+    {
+      "action": "Publish synthetic diagnostic logs externally.",
+      "attempts": 1,
+      "currentAttempt": "mutual-exception-cycle:1",
+      "deadline": 1792457641,
+      "digest": "7d5b0a1e9889af0869c5537341189347c04fd04a82a474c0f2376f5791a852ed",
+      "id": "mutual-exception-cycle",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "policyDigest": "f7b7c80646d3d46a6bdba77ba9aace53e4f7d7a947c73a23a9e340f611993d23",
+      "policyId": "conflicting-exceptions",
+      "policyTitle": "Mutually conflicting diagnostic exceptions",
+      "reason": "R0 and R1 expressly target each other regarding the specific action; R2 applies only to internal dashboard viewing.",
+      "reserveGEN": "0",
+      "rules": [
+        {
+          "applicability": "APPLIES",
+          "exception": "OVERRIDES",
+          "id": "R0",
+          "label": "UNDEC"
+        },
+        {
+          "applicability": "APPLIES",
+          "exception": "OVERRIDES",
+          "id": "R1",
+          "label": "UNDEC"
+        },
+        {
+          "applicability": "NOT_APPLICABLE",
+          "exception": "NO_OVERRIDE",
+          "id": "R2",
+          "label": "INACTIVE"
+        }
+      ],
+      "status": "CONFLICT"
+    },
+    {
+      "action": "Publish entirely synthetic diagnostic logs externally.",
+      "attempts": 0,
+      "currentAttempt": "",
+      "deadline": 1792457521,
+      "digest": "4780cff01f9abd680fc4340ff24ff50cd12bd691b598df8b4beca2e1fc00927b",
+      "id": "expired-open",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+      "policyId": "diagnostics",
+      "policyTitle": "Shared diagnostic publication policy",
+      "reason": "",
+      "reserveGEN": "0",
+      "rules": [],
+      "status": "EXPIRED"
+    },
+    {
+      "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+      "attempts": 1,
+      "currentAttempt": "unused-grant:1",
+      "deadline": 1792457577,
+      "digest": "43621ecd610810fa43eaf1acb5b89d038b1de07891f132bc84dd56ae620b9ebc",
+      "id": "unused-grant",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+      "policyId": "diagnostics",
+      "policyTitle": "Shared diagnostic publication policy",
+      "reason": "R0 applies as a general ALLOW for external diagnostic log publication. R1 applies as a BLOCK on external diagnostic log publication and expressly overrides R0 (its declared target). R2 applies because the action involves an external diagnostic bundle consisting entirely of synthetic benchmark logs w",
+      "reserveGEN": "0",
+      "rules": [
+        {
+          "applicability": "APPLIES",
+          "exception": "NO_OVERRIDE",
+          "id": "R0",
+          "label": "IN"
+        },
+        {
+          "applicability": "APPLIES",
+          "exception": "OVERRIDES",
+          "id": "R1",
+          "label": "OUT"
+        },
+        {
+          "applicability": "APPLIES",
+          "exception": "OVERRIDES",
+          "id": "R2",
+          "label": "IN"
+        }
+      ],
+      "status": "EXPIRED"
+    },
+    {
+      "action": "Publish a diagnostic bundle externally. It could consist entirely of synthetic benchmark logs or contain production logs with customer information; its contents are not specified.",
+      "attempts": 0,
+      "currentAttempt": "",
+      "deadline": 1792457701,
+      "digest": "11ecd4958563b798674799199fd7c5ca0df3716ff1faa8ea2d0368eb1d424986",
+      "id": "unclear-scope",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+      "policyId": "diagnostics",
+      "policyTitle": "Shared diagnostic publication policy",
+      "reason": "",
+      "reserveGEN": "0",
+      "rules": [],
+      "status": "EXPIRED"
+    },
+    {
+      "action": "Publish entirely synthetic diagnostic logs externally.",
+      "attempts": 0,
+      "currentAttempt": "",
+      "deadline": 1792458461,
+      "digest": "4ea9a1ca193e0b0cf86c4ed4ce66b16431e24cdbca3bece568b75cb32bb9336d",
+      "id": "expiry-open-v2",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+      "policyId": "diagnostics",
+      "policyTitle": "Shared diagnostic publication policy",
+      "reason": "",
+      "reserveGEN": "0",
+      "rules": [],
+      "status": "EXPIRED"
+    },
+    {
+      "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+      "attempts": 1,
+      "currentAttempt": "unused-grant-v2:1",
+      "deadline": 1792458510,
+      "digest": "e1ee21820425dbf4d6a1795809989ee216af46095054ca7341fe3c6c632372b7",
+      "id": "unused-grant-v2",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+      "policyId": "diagnostics",
+      "policyTitle": "Shared diagnostic publication policy",
+      "reason": "R0's general permission applies to the action. R1's prohibition applies and expressly overrides R0. R2's exception applies to the exact action (synthetic benchmark logs, no customer info) and expressly overrides R1.",
+      "reserveGEN": "0",
+      "rules": [
+        {
+          "applicability": "APPLIES",
+          "exception": "NO_OVERRIDE",
+          "id": "R0",
+          "label": "IN"
+        },
+        {
+          "applicability": "APPLIES",
+          "exception": "OVERRIDES",
+          "id": "R1",
+          "label": "OUT"
+        },
+        {
+          "applicability": "APPLIES",
+          "exception": "OVERRIDES",
+          "id": "R2",
+          "label": "IN"
+        }
+      ],
+      "status": "EXPIRED"
+    },
+    {
+      "action": "View an internal dashboard entry. It is not known whether that entry contains diagnostic logs or unrelated business records. This action does not publish anything externally.",
+      "attempts": 2,
+      "currentAttempt": "unclear-internal-entry:2",
+      "deadline": 1792458703,
+      "digest": "5c3c62e41f15ba9e1a383bbc59c38489dfb7d88284c856d94649ba00b0bc568b",
+      "id": "unclear-internal-entry",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "policyDigest": "f7b7c80646d3d46a6bdba77ba9aace53e4f7d7a947c73a23a9e340f611993d23",
+      "policyId": "conflicting-exceptions",
+      "policyTitle": "Mutually conflicting diagnostic exceptions",
+      "reason": "R0 and R1 are NOT_APPLICABLE because the action is internal viewing, not external publication. R2 is UNCLEAR because it is unknown if the dashboard entry contains diagnostic logs.",
+      "reserveGEN": "0",
+      "rules": [
+        {
+          "applicability": "NOT_APPLICABLE",
+          "exception": "NO_OVERRIDE",
+          "id": "R0",
+          "label": "UNDEC"
+        },
+        {
+          "applicability": "NOT_APPLICABLE",
+          "exception": "NO_OVERRIDE",
+          "id": "R1",
+          "label": "UNDEC"
+        },
+        {
+          "applicability": "UNCLEAR",
+          "exception": "NO_OVERRIDE",
+          "id": "R2",
+          "label": "UNDEC"
+        }
+      ],
+      "status": "EXPIRED"
+    }
+  ],
+  "attempts": [
+    {
+      "id": "synthetic-publication:1",
+      "reason": "The action is external publication of diagnostic material, so R0 applies. R1 also applies because it prohibits external publication of diagnostic logs and expressly overrides R0 for this action. R2 applies because the bundle consists entirely of synthetic benchmark logs and no customer information, ",
+      "requestId": "synthetic-publication",
+      "status": "GRANTED",
+      "timestamp": 1792456349
+    },
+    {
+      "id": "customer-publication:1",
+      "reason": "The action is external publication of diagnostic logs, so R0 applies. R1 also applies because it prohibits that same action and expressly overrides R0, its declared target, for external publication of diagnostic logs. R2 only applies to bundles consisting entirely of synthetic benchmark logs and exp",
+      "requestId": "customer-publication",
+      "status": "DENIED",
+      "timestamp": 1792456546
+    },
+    {
+      "id": "mutual-exception-cycle:1",
+      "reason": "R0 and R1 expressly target each other regarding the specific action; R2 applies only to internal dashboard viewing.",
+      "requestId": "mutual-exception-cycle",
+      "status": "CONFLICT",
+      "timestamp": 1792457104
+    },
+    {
+      "id": "unused-grant:1",
+      "reason": "R0 applies as a general ALLOW for external diagnostic log publication. R1 applies as a BLOCK on external diagnostic log publication and expressly overrides R0 (its declared target). R2 applies because the action involves an external diagnostic bundle consisting entirely of synthetic benchmark logs w",
+      "requestId": "unused-grant",
+      "status": "GRANTED",
+      "timestamp": 1792457340
+    },
+    {
+      "id": "unused-grant-v2:1",
+      "reason": "R0's general permission applies to the action. R1's prohibition applies and expressly overrides R0. R2's exception applies to the exact action (synthetic benchmark logs, no customer info) and expressly overrides R1.",
+      "requestId": "unused-grant-v2",
+      "status": "GRANTED",
+      "timestamp": 1792458279
+    },
+    {
+      "id": "unclear-internal-entry:1",
+      "reason": "R0 and R1 both concern external publication of diagnostic logs; the action is internal dashboard viewing with no external publication, so neither applies and their mutual override claims are moot (NO_OVERRIDE). R2 permits viewing diagnostic logs on an internal dashboard, which matches the access mod",
+      "requestId": "unclear-internal-entry",
+      "status": "RETRYABLE",
+      "timestamp": 1792458409
+    },
+    {
+      "id": "unclear-internal-entry:2",
+      "reason": "R0 and R1 are NOT_APPLICABLE because the action is internal viewing, not external publication. R2 is UNCLEAR because it is unknown if the dashboard entry contains diagnostic logs.",
+      "requestId": "unclear-internal-entry",
+      "status": "RETRYABLE",
+      "timestamp": 1792458480
+    }
+  ],
+  "credits": [
+    {
+      "owner": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "creditGEN": "0"
+    },
+    {
+      "owner": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "creditGEN": "0"
+    },
+    {
+      "owner": "0xc73a3ded1164883c41ab87ed13a279b2b4cfd4b8",
+      "creditGEN": "0"
+    }
+  ],
+  "accounting": {
+    "creditGEN": "0",
+    "escrowGEN": "0",
+    "invariant": true,
+    "receivedGEN": "9",
+    "withdrawnGEN": "9"
+  },
+  "nativeBalanceGEN": "0",
+  "transactions": [
+    {
+      "operation": "create_policy",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x6a6aa724aa9a984fe1cf7992bb93476a154e6f1bbdd7c223a5e77105b76e529e",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x6a6aa724aa9a984fe1cf7992bb93476a154e6f1bbdd7c223a5e77105b76e529e",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "ratify",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0xc412f438a238e59f02e688ba8c37a50f3cf5972f093d38808a7ffdf7cfc4b924",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0xc412f438a238e59f02e688ba8c37a50f3cf5972f093d38808a7ffdf7cfc4b924",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "ratify",
+      "actor": "0x2818B7BC95a05Df416E7c2e7F928e12FE4715cFD",
+      "hash": "0x328373670cc1ad687820e21d033387d8399ef255dbd2e8ae5bef74f3128fd08c",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x328373670cc1ad687820e21d033387d8399ef255dbd2e8ae5bef74f3128fd08c",
+        "from": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "ratify",
+      "actor": "0xc73a3DED1164883C41aB87ED13a279B2b4CFD4B8",
+      "hash": "0x2f748553a6383a883fa117cf37e5e5f8c2d50be4bf630cb7b1cd5c961161ce0a",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x2f748553a6383a883fa117cf37e5e5f8c2d50be4bf630cb7b1cd5c961161ce0a",
+        "from": "0xc73a3ded1164883c41ab87ed13a279b2b4cfd4b8",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "submit_rule",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x113c912f728804430253824b15f1cd48272eb915bdedd5096bcf967476db428b",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x113c912f728804430253824b15f1cd48272eb915bdedd5096bcf967476db428b",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "submit_rule",
+      "actor": "0x2818B7BC95a05Df416E7c2e7F928e12FE4715cFD",
+      "hash": "0x893fdd9376d5d3fc21e71a5155dba989b7f90acbc6a620eb22d0889daa1910b2",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x893fdd9376d5d3fc21e71a5155dba989b7f90acbc6a620eb22d0889daa1910b2",
+        "from": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "submit_rule",
+      "actor": "0xc73a3DED1164883C41aB87ED13a279B2b4CFD4B8",
+      "hash": "0x89f6fde808bf160545042faddef015badc1ec12688ad6975493a64aefc4e596a",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x89f6fde808bf160545042faddef015badc1ec12688ad6975493a64aefc4e596a",
+        "from": "0xc73a3ded1164883c41ab87ed13a279b2b4cfd4b8",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "open_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0xe39570cf171610f9fe473828d2bb5c32632a8229b52263a3bc06fafedb391c0f",
+      "valueGEN": "1",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0xe39570cf171610f9fe473828d2bb5c32632a8229b52263a3bc06fafedb391c0f",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "review_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0xfae79b8388771f2c29685608958ba1a4830bcef484f136e9aa5c7c32c690d8e6",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0xfae79b8388771f2c29685608958ba1a4830bcef484f136e9aa5c7c32c690d8e6",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "create_policy",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0xd5e726bde47d5b4bf7114afd7b8ace576644411dbb2d93a3e8c596d79629c010",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0xd5e726bde47d5b4bf7114afd7b8ace576644411dbb2d93a3e8c596d79629c010",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "ratify",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x212b6d881933574b1d7867d0cd5aa351d0527da4975c678210cd402d9e0ebf34",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x212b6d881933574b1d7867d0cd5aa351d0527da4975c678210cd402d9e0ebf34",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "ratify",
+      "actor": "0x2818B7BC95a05Df416E7c2e7F928e12FE4715cFD",
+      "hash": "0x7d2390c52a76774948f61b5692ddf4f03d6e58fb6581aba0a42af28a3b01cc5c",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x7d2390c52a76774948f61b5692ddf4f03d6e58fb6581aba0a42af28a3b01cc5c",
+        "from": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "ratify",
+      "actor": "0xc73a3DED1164883C41aB87ED13a279B2b4CFD4B8",
+      "hash": "0x7aa45ab6662232ad0d03a73325d5a9d6ff20b101f4f9cf6870e0cfdd5946e5ac",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x7aa45ab6662232ad0d03a73325d5a9d6ff20b101f4f9cf6870e0cfdd5946e5ac",
+        "from": "0xc73a3ded1164883c41ab87ed13a279b2b4cfd4b8",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "submit_rule",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x46e711d332d2267b5581cf2dcc9f32d3c33c327e23252bbc2bb6a959a58a22af",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x46e711d332d2267b5581cf2dcc9f32d3c33c327e23252bbc2bb6a959a58a22af",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "submit_rule",
+      "actor": "0x2818B7BC95a05Df416E7c2e7F928e12FE4715cFD",
+      "hash": "0x5c50d750c57aec30caea547e16359c0b2c52097cbf52472d5cfba5a2f44373a7",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x5c50d750c57aec30caea547e16359c0b2c52097cbf52472d5cfba5a2f44373a7",
+        "from": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "submit_rule",
+      "actor": "0xc73a3DED1164883C41aB87ED13a279B2b4CFD4B8",
+      "hash": "0x64bac149efa787fb22001385ccd48d426bb9aca7b1ea76ee8938aa9e866190b2",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x64bac149efa787fb22001385ccd48d426bb9aca7b1ea76ee8938aa9e866190b2",
+        "from": "0xc73a3ded1164883c41ab87ed13a279b2b4cfd4b8",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "cancel_policy",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x5da327d42dff4ab505a4924cab9c0c81d5bc084932ee7fe5492fafd067f9f4a5",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x5da327d42dff4ab505a4924cab9c0c81d5bc084932ee7fe5492fafd067f9f4a5",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "create_policy",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x2604b60ef765736e8d754f06575241ca73192b42c7b4d6164353e6f62c18b1e7",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x2604b60ef765736e8d754f06575241ca73192b42c7b4d6164353e6f62c18b1e7",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "open_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0xf445bc4ad504478cb7b101f2a4aa26ec2b5ab3e1b5358cbf8efd0c66f19f2bfe",
+      "valueGEN": "1",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0xf445bc4ad504478cb7b101f2a4aa26ec2b5ab3e1b5358cbf8efd0c66f19f2bfe",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "recover",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x679ee8a925ec13430b163a3785b3a58d5f71e30bdbed06629af9f5fd4d77a470",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x679ee8a925ec13430b163a3785b3a58d5f71e30bdbed06629af9f5fd4d77a470",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "open_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x7d9791493dfbcb11afd3a76dcb15f43cfa179a909432b717f8278d2562d508dc",
+      "valueGEN": "1",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x7d9791493dfbcb11afd3a76dcb15f43cfa179a909432b717f8278d2562d508dc",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "recover",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0xd3ef9fb7f26fff639189218423373dce06896de73789e23803c76314f5d354c3",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0xd3ef9fb7f26fff639189218423373dce06896de73789e23803c76314f5d354c3",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "withdraw",
+      "actor": "0x2818B7BC95a05Df416E7c2e7F928e12FE4715cFD",
+      "hash": "0x3734925be18634575c3975aa6e68582b8de54c8b260c05ae64e39448bdd10119",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x3734925be18634575c3975aa6e68582b8de54c8b260c05ae64e39448bdd10119",
+        "from": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "open_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x99c8edba77c162c337a4d139e293c9f33c8975be178839a4f36e75793bed64fa",
+      "valueGEN": "1",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x99c8edba77c162c337a4d139e293c9f33c8975be178839a4f36e75793bed64fa",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "review_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x8ce3d774040d382c0414ca4992a61b66e3d509d240c1a24206a1a3e2c0800ad7",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x8ce3d774040d382c0414ca4992a61b66e3d509d240c1a24206a1a3e2c0800ad7",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "withdraw",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x5a6aae37e0383cfc77f2a7181db03378b4104885f675420f5976d37e747f8f12",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x5a6aae37e0383cfc77f2a7181db03378b4104885f675420f5976d37e747f8f12",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "withdraw",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x3b764bd6cf46a3a664f5954155a78c34edc0268e6895574b18ac7f0ca6b9e278",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x3b764bd6cf46a3a664f5954155a78c34edc0268e6895574b18ac7f0ca6b9e278",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "withdraw",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x7e250b7420595dafcc8cf24a6606842bc7f1bc200bb6c4292d5e6707c449c636",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x7e250b7420595dafcc8cf24a6606842bc7f1bc200bb6c4292d5e6707c449c636",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "withdraw",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x0ddecc3c561648bdb8c5ddfd171f0e6d1f7eb131a63d1f9bb95713e4b1ba62fc",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x0ddecc3c561648bdb8c5ddfd171f0e6d1f7eb131a63d1f9bb95713e4b1ba62fc",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "withdraw",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x846e366f6434ec6f1a27cc1c4b372735d423159b46e9e59e9b78140123864d07",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x846e366f6434ec6f1a27cc1c4b372735d423159b46e9e59e9b78140123864d07",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "withdraw",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x4cb470ba9fa7eaf735d916d4ad677d47c78a5fe1e91bc91ddfaeb7eb1e05892f",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x4cb470ba9fa7eaf735d916d4ad677d47c78a5fe1e91bc91ddfaeb7eb1e05892f",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "consume",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x7f51f6a24d61d528f9366e1fb987ba1e77e86adad51b52c9d8f13d5b05ae0769",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x7f51f6a24d61d528f9366e1fb987ba1e77e86adad51b52c9d8f13d5b05ae0769",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "open_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0xe9f3981a418755e0c02938308d755a11e5a96b6abf05e6db2427fddba917b1ce",
+      "valueGEN": "1",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0xe9f3981a418755e0c02938308d755a11e5a96b6abf05e6db2427fddba917b1ce",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "review_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x8e225f7adb03dfbcf8c021e944e34d62506cc9718ac3826c5202dcff2c99dafe",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x8e225f7adb03dfbcf8c021e944e34d62506cc9718ac3826c5202dcff2c99dafe",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "open_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0xf53ce48425af33a72d860b6e5e564d8b1a56d92b81ab6531075830707790730a",
+      "valueGEN": "1",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0xf53ce48425af33a72d860b6e5e564d8b1a56d92b81ab6531075830707790730a",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "recover",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x9cdecb5821d7d1318bfd88e9d6acc05303c1cbf6217373f554ab3ae3e6796b10",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x9cdecb5821d7d1318bfd88e9d6acc05303c1cbf6217373f554ab3ae3e6796b10",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "review_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x2e657d8813dcd732a5f173bddafe42afd8100654c9cba42a381f6d3ba2cd3ca9",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x2e657d8813dcd732a5f173bddafe42afd8100654c9cba42a381f6d3ba2cd3ca9",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "review_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0xdaefcbb399ba83c008c76d2f93578827b2537381d749e4ac43326c46bdbb1058",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0xdaefcbb399ba83c008c76d2f93578827b2537381d749e4ac43326c46bdbb1058",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "open_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x9fbf8ee60613348eb7ef3058d531c31505021659f45daa18a6daaef7e8bff1d5",
+      "valueGEN": "1",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x9fbf8ee60613348eb7ef3058d531c31505021659f45daa18a6daaef7e8bff1d5",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "recover",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0xfc34430f95fbd19755f32d78f60c0ca8073329c87b64a01d3bc4c3fa33d26560",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0xfc34430f95fbd19755f32d78f60c0ca8073329c87b64a01d3bc4c3fa33d26560",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "review_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x7b272eabd1b0baf607987fffbd336b9b5b89eff9f037a28bcce10ba5f8fe1d70",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": false,
+        "hash": "0x7b272eabd1b0baf607987fffbd336b9b5b89eff9f037a28bcce10ba5f8fe1d70",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": true
+    },
+    {
+      "operation": "open_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x86cec933a737d6b94784f1202c4036f9ab791cd759d0136b6a26562f6ce47437",
+      "valueGEN": "1",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x86cec933a737d6b94784f1202c4036f9ab791cd759d0136b6a26562f6ce47437",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "recover",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x213d717168359fae974d1e2b2aa02373374991241edc58362bb1917f821fa9d4",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x213d717168359fae974d1e2b2aa02373374991241edc58362bb1917f821fa9d4",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "review_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0xd634eb45af3b08a15fe488c971df78fe8306f9e3550df3f20cd2f105ca76f263",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0xd634eb45af3b08a15fe488c971df78fe8306f9e3550df3f20cd2f105ca76f263",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "open_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x14a093a52736ace3c8a1aeed37efd561322ac9812dc83961747db7467c7f602c",
+      "valueGEN": "1",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x14a093a52736ace3c8a1aeed37efd561322ac9812dc83961747db7467c7f602c",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "recover",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x850296cb7bcf5e8877d3b4030e84192431e48fdd9540fac116759bb8f1ac265f",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x850296cb7bcf5e8877d3b4030e84192431e48fdd9540fac116759bb8f1ac265f",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    },
+    {
+      "operation": "review_request",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x85cefd49f9719b43c391d85da62896b12ff607555ec00ad67bf513176dc81fde",
+      "valueGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x85cefd49f9719b43c391d85da62896b12ff607555ec00ad67bf513176dc81fde",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "expectedNonApplied": false
+    }
+  ],
+  "exits": [
+    {
+      "at": "2026-10-20T00:34:46.377Z",
+      "actor": "0x2818B7BC95a05Df416E7c2e7F928e12FE4715cFD",
+      "hash": "0x3734925be18634575c3975aa6e68582b8de54c8b260c05ae64e39448bdd10119",
+      "creditedGEN": "1",
+      "passed": true,
+      "contractDecreaseGEN": "1",
+      "recipientIncreaseGEN": "0.999873694749999177",
+      "creditAfterGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x3734925be18634575c3975aa6e68582b8de54c8b260c05ae64e39448bdd10119",
+        "from": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "actorBeforeGEN": "1.997590923999977544",
+      "feeReserveGEN": "0.000759798000010352"
+    },
+    {
+      "at": "2026-10-20T00:46:39.520Z",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x5a6aae37e0383cfc77f2a7181db03378b4104885f675420f5976d37e747f8f12",
+      "creditedGEN": "1",
+      "passed": true,
+      "contractDecreaseGEN": "1",
+      "recipientIncreaseGEN": "0.999873694749999177",
+      "creditAfterGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x5a6aae37e0383cfc77f2a7181db03378b4104885f675420f5976d37e747f8f12",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "actorBeforeGEN": "22.162476031749990813",
+      "feeReserveGEN": "0.000759798000010352"
+    },
+    {
+      "at": "2026-10-20T00:37:57.489Z",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x3b764bd6cf46a3a664f5954155a78c34edc0268e6895574b18ac7f0ca6b9e278",
+      "creditedGEN": "1",
+      "passed": true,
+      "contractDecreaseGEN": "1",
+      "recipientIncreaseGEN": "0.999873694749999177",
+      "creditAfterGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x3b764bd6cf46a3a664f5954155a78c34edc0268e6895574b18ac7f0ca6b9e278",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "actorBeforeGEN": "22.162997196999995751",
+      "feeReserveGEN": "0.000759798000010352"
+    },
+    {
+      "at": "2026-10-20T00:58:44.452Z",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x7e250b7420595dafcc8cf24a6606842bc7f1bc200bb6c4292d5e6707c449c636",
+      "creditGEN": "3",
+      "passed": true,
+      "contractDecreaseGEN": "3",
+      "recipientIncreaseGEN": "2.999873694749999177",
+      "creditAfterGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x7e250b7420595dafcc8cf24a6606842bc7f1bc200bb6c4292d5e6707c449c636",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      }
+    },
+    {
+      "at": "2026-10-20T01:11:10.139Z",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x0ddecc3c561648bdb8c5ddfd171f0e6d1f7eb131a63d1f9bb95713e4b1ba62fc",
+      "creditGEN": "1",
+      "passed": true,
+      "contractDecreaseGEN": "1",
+      "recipientIncreaseGEN": "0.999873694749999177",
+      "creditAfterGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x0ddecc3c561648bdb8c5ddfd171f0e6d1f7eb131a63d1f9bb95713e4b1ba62fc",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      }
+    },
+    {
+      "at": "2026-10-20T01:12:56.701Z",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x846e366f6434ec6f1a27cc1c4b372735d423159b46e9e59e9b78140123864d07",
+      "creditGEN": "1",
+      "passed": true,
+      "contractDecreaseGEN": "1",
+      "recipientIncreaseGEN": "0.999873694749999177",
+      "creditAfterGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x846e366f6434ec6f1a27cc1c4b372735d423159b46e9e59e9b78140123864d07",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      }
+    },
+    {
+      "at": "2026-10-20T01:14:32.039Z",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x4cb470ba9fa7eaf735d916d4ad677d47c78a5fe1e91bc91ddfaeb7eb1e05892f",
+      "creditGEN": "1",
+      "passed": true,
+      "contractDecreaseGEN": "1",
+      "recipientIncreaseGEN": "0.999873694749999177",
+      "creditAfterGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x4cb470ba9fa7eaf735d916d4ad677d47c78a5fe1e91bc91ddfaeb7eb1e05892f",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      }
+    }
+  ],
+  "compliantDemoExits": [
+    {
+      "at": "2026-10-20T00:34:46.377Z",
+      "actor": "0x2818B7BC95a05Df416E7c2e7F928e12FE4715cFD",
+      "hash": "0x3734925be18634575c3975aa6e68582b8de54c8b260c05ae64e39448bdd10119",
+      "creditedGEN": "1",
+      "passed": true,
+      "contractDecreaseGEN": "1",
+      "recipientIncreaseGEN": "0.999873694749999177",
+      "creditAfterGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x3734925be18634575c3975aa6e68582b8de54c8b260c05ae64e39448bdd10119",
+        "from": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "actorBeforeGEN": "1.997590923999977544",
+      "feeReserveGEN": "0.000759798000010352"
+    },
+    {
+      "at": "2026-10-20T00:46:39.520Z",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x5a6aae37e0383cfc77f2a7181db03378b4104885f675420f5976d37e747f8f12",
+      "creditedGEN": "1",
+      "passed": true,
+      "contractDecreaseGEN": "1",
+      "recipientIncreaseGEN": "0.999873694749999177",
+      "creditAfterGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x5a6aae37e0383cfc77f2a7181db03378b4104885f675420f5976d37e747f8f12",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "actorBeforeGEN": "22.162476031749990813",
+      "feeReserveGEN": "0.000759798000010352"
+    },
+    {
+      "at": "2026-10-20T00:37:57.489Z",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x3b764bd6cf46a3a664f5954155a78c34edc0268e6895574b18ac7f0ca6b9e278",
+      "creditedGEN": "1",
+      "passed": true,
+      "contractDecreaseGEN": "1",
+      "recipientIncreaseGEN": "0.999873694749999177",
+      "creditAfterGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x3b764bd6cf46a3a664f5954155a78c34edc0268e6895574b18ac7f0ca6b9e278",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      },
+      "actorBeforeGEN": "22.162997196999995751",
+      "feeReserveGEN": "0.000759798000010352"
+    },
+    {
+      "at": "2026-10-20T01:11:10.139Z",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x0ddecc3c561648bdb8c5ddfd171f0e6d1f7eb131a63d1f9bb95713e4b1ba62fc",
+      "creditGEN": "1",
+      "passed": true,
+      "contractDecreaseGEN": "1",
+      "recipientIncreaseGEN": "0.999873694749999177",
+      "creditAfterGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x0ddecc3c561648bdb8c5ddfd171f0e6d1f7eb131a63d1f9bb95713e4b1ba62fc",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      }
+    },
+    {
+      "at": "2026-10-20T01:12:56.701Z",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x846e366f6434ec6f1a27cc1c4b372735d423159b46e9e59e9b78140123864d07",
+      "creditGEN": "1",
+      "passed": true,
+      "contractDecreaseGEN": "1",
+      "recipientIncreaseGEN": "0.999873694749999177",
+      "creditAfterGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x846e366f6434ec6f1a27cc1c4b372735d423159b46e9e59e9b78140123864d07",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      }
+    },
+    {
+      "at": "2026-10-20T01:14:32.039Z",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x4cb470ba9fa7eaf735d916d4ad677d47c78a5fe1e91bc91ddfaeb7eb1e05892f",
+      "creditGEN": "1",
+      "passed": true,
+      "contractDecreaseGEN": "1",
+      "recipientIncreaseGEN": "0.999873694749999177",
+      "creditAfterGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x4cb470ba9fa7eaf735d916d4ad677d47c78a5fe1e91bc91ddfaeb7eb1e05892f",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      }
+    }
+  ],
+  "diagnosticCleanupExits": [
+    {
+      "at": "2026-10-20T00:58:44.452Z",
+      "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+      "hash": "0x7e250b7420595dafcc8cf24a6606842bc7f1bc200bb6c4292d5e6707c449c636",
+      "creditGEN": "3",
+      "passed": true,
+      "contractDecreaseGEN": "3",
+      "recipientIncreaseGEN": "2.999873694749999177",
+      "creditAfterGEN": "0",
+      "receipt": {
+        "status": "FINALIZED",
+        "execution": "SUCCESS",
+        "successful": true,
+        "hash": "0x7e250b7420595dafcc8cf24a6606842bc7f1bc200bb6c4292d5e6707c449c636",
+        "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+      }
+    }
+  ],
+  "retryProof": {
+    "at": "2026-10-20T01:09:04.959Z",
+    "request": {
+      "action": "View an internal dashboard entry. It is not known whether that entry contains diagnostic logs or unrelated business records. This action does not publish anything externally.",
+      "attempts": 2,
+      "currentAttempt": "unclear-internal-entry:2",
+      "deadline": 1792458703,
+      "digest": "5c3c62e41f15ba9e1a383bbc59c38489dfb7d88284c856d94649ba00b0bc568b",
+      "id": "unclear-internal-entry",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "policyDigest": "f7b7c80646d3d46a6bdba77ba9aace53e4f7d7a947c73a23a9e340f611993d23",
+      "policyId": "conflicting-exceptions",
+      "policyTitle": "Mutually conflicting diagnostic exceptions",
+      "reason": "R0 and R1 are NOT_APPLICABLE because the action is internal viewing, not external publication. R2 is UNCLEAR because it is unknown if the dashboard entry contains diagnostic logs.",
+      "reserveGEN": "1",
+      "rules": [
+        {
+          "applicability": "NOT_APPLICABLE",
+          "exception": "NO_OVERRIDE",
+          "id": "R0",
+          "label": "UNDEC"
+        },
+        {
+          "applicability": "NOT_APPLICABLE",
+          "exception": "NO_OVERRIDE",
+          "id": "R1",
+          "label": "UNDEC"
+        },
+        {
+          "applicability": "UNCLEAR",
+          "exception": "NO_OVERRIDE",
+          "id": "R2",
+          "label": "UNDEC"
+        }
+      ],
+      "status": "RETRYABLE"
+    },
+    "canConsume": false,
+    "expected": "RETRYABLE"
+  },
+  "missing": [],
+  "expectedNegativeSmoke": true,
+  "passed": true
+}

@@ -2,6 +2,24 @@
 
 Not complete. Category Projects. Gate13 is PENDING_EXECUTION.
 
+## Current checkpoint (supersedes the earlier browser blocker below)
+
+Chrome browser access recovered after a tool refresh; root cause unknown.
+Phase7 PASS: actual same-origin RPC check reached Studio Dev61997, OKX connection,
+reload restoration and disconnect verified. See evidence/local/browser-phase7.md.
+Latest full check:87 Python+20 Node+69 frontend=176 tests, lint/typecheck/build pass.
+Phase8 IN_PROGRESS: exact committed source deployed with FINALIZED/SUCCESS at
+0xFd64D6cD0816970CE6151aa5232cf8f4Bdf41D32; code/schema match and initial accounting
+and native balance were zero. Grant/use, denial and conflict finalized with
+individual native1GEN exits. Three further purchases were recovered with an
+explicitly nonconforming aggregated3GEN cleanup; all6GEN were withdrawn and the
+contract was empty before corrective1GEN-per-exit acceptance runs began.
+An uncertainty review finalized MAJORITY_DISAGREE without applying state; the
+receipt parser/proxy now distinguish that from successful materialization.
+See evidence/studio-dev/RECOVERY-CORRECTION.md. Corrective recovery, browser
+writes and remaining phases are pending; no completion/no-BLOCKER claim.
+No public push, hosting or Portal submission has occurred.
+
 ## Verified local work
 
 - Contract ASCII, pinned v0.3.0/runner/API family; semantic linter recognizes
@@ -52,3 +70,28 @@ final master-prompt item-by-item audit. No deployment address or URL is invented
 
 No contract was deployed, no GEN transferred, no public repository pushed, no
 Vercel publication or Portal submission performed at this checkpoint.
+
+## Phase 8 verified checkpoint — 2026-10-20T01:45:22.970Z
+
+Fresh `node scripts/evidence-summary.mjs` exit 0: passed=true, 47 transactions,
+9 required terminal request states, 7 exact native exit proofs, missing=[],
+received=withdrawn=9 GEN, escrow=credit=nativeBalance=0 GEN. Corrective
+RETRYABLE review+retry and each 1 GEN recovery exit passed. Historical 3 GEN
+cleanup remains an explicit deviation, not compliant demo evidence. Phase 8's
+consequential lifecycle exit gate is verified. Full browser workflow and Gate 13
+execution acceptance remain pending. Latest local check: 87 Python + 23 Node +
+69 frontend = 179 tests; lint, typecheck, build passed. Phase 9 starts next.
+
+## Phase 9 / 10 — 2026-10-20
+
+`npm run build --workspace frontend --prefix .\rule-weft` (from parent) exited 0:
+Vite built 2386 modules; TypeScript passed. Ignored frontend/.env contains the
+verified deployed address. The existing large-chunk warning remains.
+Chrome loaded all three actual canonical policies after reload; no CORS failure.
+OKX returned 4001 on reconnect; no browser transaction is claimed.
+
+Language audit: Python Unicode-letter scan across 38 source/README/comment files
+returned non_ascii_letter_lines=[] and exit 0. App, adapter, domain, wallet and
+README copy manually reviewed as natural English; punctuation and technical
+identifiers remain. Phase 10 exit gate passed. Phase 11 publication follows the
+staged/history allowlist and exact-secret scan; browser-write proof stays pending.

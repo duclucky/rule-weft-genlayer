@@ -1,0 +1,47 @@
+{
+  "observedAt": "2026-10-20T00:38:46.153Z",
+  "request": {
+    "action": "Publish an external diagnostic bundle containing production diagnostic logs with customer information.",
+    "attempts": 1,
+    "currentAttempt": "customer-publication:1",
+    "deadline": 1792457087,
+    "digest": "7c2878b389beb576608df10fa63eaf8bce2c219aac1cc522c6fb0561003820ef",
+    "id": "customer-publication",
+    "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+    "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+    "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+    "policyId": "diagnostics",
+    "policyTitle": "Shared diagnostic publication policy",
+    "reason": "The action is external publication of diagnostic logs, so R0 applies. R1 also applies because it prohibits that same action and expressly overrides R0, its declared target, for external publication of diagnostic logs. R2 only applies to bundles consisting entirely of synthetic benchmark logs and exp",
+    "reserveGEN": "0",
+    "rules": [
+      {
+        "applicability": "APPLIES",
+        "exception": "NO_OVERRIDE",
+        "id": "R0",
+        "label": "OUT"
+      },
+      {
+        "applicability": "APPLIES",
+        "exception": "OVERRIDES",
+        "id": "R1",
+        "label": "IN"
+      },
+      {
+        "applicability": "NOT_APPLICABLE",
+        "exception": "NO_OVERRIDE",
+        "id": "R2",
+        "label": "INACTIVE"
+      }
+    ],
+    "status": "DENIED"
+  },
+  "canConsume": false,
+  "attempt": {
+    "id": "customer-publication:1",
+    "reason": "The action is external publication of diagnostic logs, so R0 applies. R1 also applies because it prohibits that same action and expressly overrides R0, its declared target, for external publication of diagnostic logs. R2 only applies to bundles consisting entirely of synthetic benchmark logs and exp",
+    "requestId": "customer-publication",
+    "status": "DENIED",
+    "timestamp": 1792456546
+  }
+}

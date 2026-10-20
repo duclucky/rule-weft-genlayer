@@ -1,0 +1,330 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "sourceCommit": "f498e18319a3d0569dab7400c8bf810079969d9a",
+  "sourceSha256": "a98626be9b84e28b9523a5c3f89be50de596a5114919357b2593126104955d66",
+  "api": "v0.3.0",
+  "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+  "genvm": "v0.6.0-rc5",
+  "sdk": "2.0.0-rc.1",
+  "contractVersion": "RW_V1",
+  "operation": "open_request",
+  "args": [
+    "unused-grant",
+    "diagnostics",
+    "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+    "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+    1792457577
+  ],
+  "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "valueGEN": "1",
+  "feeReserveGEN": "0.000378518400010352",
+  "before": {
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "1",
+      "invariant": true,
+      "receivedGEN": "4",
+      "withdrawnGEN": "3"
+    },
+    "requests": [
+      {
+        "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+        "attempts": 1,
+        "currentAttempt": "synthetic-publication:1",
+        "deadline": 1792456885,
+        "digest": "4dfce6047fa7bb32548f6a8e2b9ef8123a623980d2460b9a2b1266ee8e7715d9",
+        "id": "synthetic-publication",
+        "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+        "policyId": "diagnostics",
+        "policyTitle": "Shared diagnostic publication policy",
+        "reason": "The action is external publication of diagnostic material, so R0 applies. R1 also applies because it prohibits external publication of diagnostic logs and expressly overrides R0 for this action. R2 applies because the bundle consists entirely of synthetic benchmark logs and no customer information, ",
+        "reserveGEN": "0",
+        "rules": [
+          {
+            "applicability": "APPLIES",
+            "exception": "NO_OVERRIDE",
+            "id": "R0",
+            "label": "IN"
+          },
+          {
+            "applicability": "APPLIES",
+            "exception": "OVERRIDES",
+            "id": "R1",
+            "label": "OUT"
+          },
+          {
+            "applicability": "APPLIES",
+            "exception": "OVERRIDES",
+            "id": "R2",
+            "label": "IN"
+          }
+        ],
+        "status": "USED"
+      },
+      {
+        "action": "Publish an external diagnostic bundle containing production diagnostic logs with customer information.",
+        "attempts": 1,
+        "currentAttempt": "customer-publication:1",
+        "deadline": 1792457087,
+        "digest": "7c2878b389beb576608df10fa63eaf8bce2c219aac1cc522c6fb0561003820ef",
+        "id": "customer-publication",
+        "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+        "policyId": "diagnostics",
+        "policyTitle": "Shared diagnostic publication policy",
+        "reason": "The action is external publication of diagnostic logs, so R0 applies. R1 also applies because it prohibits that same action and expressly overrides R0, its declared target, for external publication of diagnostic logs. R2 only applies to bundles consisting entirely of synthetic benchmark logs and exp",
+        "reserveGEN": "0",
+        "rules": [
+          {
+            "applicability": "APPLIES",
+            "exception": "NO_OVERRIDE",
+            "id": "R0",
+            "label": "OUT"
+          },
+          {
+            "applicability": "APPLIES",
+            "exception": "OVERRIDES",
+            "id": "R1",
+            "label": "IN"
+          },
+          {
+            "applicability": "NOT_APPLICABLE",
+            "exception": "NO_OVERRIDE",
+            "id": "R2",
+            "label": "INACTIVE"
+          }
+        ],
+        "status": "DENIED"
+      },
+      {
+        "action": "Publish synthetic diagnostic logs externally.",
+        "attempts": 1,
+        "currentAttempt": "mutual-exception-cycle:1",
+        "deadline": 1792457641,
+        "digest": "7d5b0a1e9889af0869c5537341189347c04fd04a82a474c0f2376f5791a852ed",
+        "id": "mutual-exception-cycle",
+        "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "policyDigest": "f7b7c80646d3d46a6bdba77ba9aace53e4f7d7a947c73a23a9e340f611993d23",
+        "policyId": "conflicting-exceptions",
+        "policyTitle": "Mutually conflicting diagnostic exceptions",
+        "reason": "R0 and R1 expressly target each other regarding the specific action; R2 applies only to internal dashboard viewing.",
+        "reserveGEN": "0",
+        "rules": [
+          {
+            "applicability": "APPLIES",
+            "exception": "OVERRIDES",
+            "id": "R0",
+            "label": "UNDEC"
+          },
+          {
+            "applicability": "APPLIES",
+            "exception": "OVERRIDES",
+            "id": "R1",
+            "label": "UNDEC"
+          },
+          {
+            "applicability": "NOT_APPLICABLE",
+            "exception": "NO_OVERRIDE",
+            "id": "R2",
+            "label": "INACTIVE"
+          }
+        ],
+        "status": "CONFLICT"
+      },
+      {
+        "action": "Publish entirely synthetic diagnostic logs externally.",
+        "attempts": 0,
+        "currentAttempt": "",
+        "deadline": 1792457521,
+        "digest": "4780cff01f9abd680fc4340ff24ff50cd12bd691b598df8b4beca2e1fc00927b",
+        "id": "expired-open",
+        "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+        "policyId": "diagnostics",
+        "policyTitle": "Shared diagnostic publication policy",
+        "reason": "",
+        "reserveGEN": "1",
+        "rules": [],
+        "status": "OPEN"
+      }
+    ],
+    "contractBalanceGEN": "1",
+    "actorBalanceGEN": "22.162271093499989167",
+    "ownCreditGEN": "0"
+  },
+  "preparedAt": "2026-10-20T00:48:03.107Z",
+  "status": "FINALIZED",
+  "hash": "0x86cec933a737d6b94784f1202c4036f9ab791cd759d0136b6a26562f6ce47437",
+  "executionResult": "SUCCESS",
+  "finalizedObservedAt": "2026-10-20T00:48:46.946Z",
+  "transactionExplorer": "https://explorer-studio-dev.genlayer.com/tx/0x86cec933a737d6b94784f1202c4036f9ab791cd759d0136b6a26562f6ce47437",
+  "receipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true,
+    "hash": "0x86cec933a737d6b94784f1202c4036f9ab791cd759d0136b6a26562f6ce47437",
+    "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+    "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+  },
+  "after": {
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "2",
+      "invariant": true,
+      "receivedGEN": "5",
+      "withdrawnGEN": "3"
+    },
+    "requests": [
+      {
+        "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+        "attempts": 1,
+        "currentAttempt": "synthetic-publication:1",
+        "deadline": 1792456885,
+        "digest": "4dfce6047fa7bb32548f6a8e2b9ef8123a623980d2460b9a2b1266ee8e7715d9",
+        "id": "synthetic-publication",
+        "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+        "policyId": "diagnostics",
+        "policyTitle": "Shared diagnostic publication policy",
+        "reason": "The action is external publication of diagnostic material, so R0 applies. R1 also applies because it prohibits external publication of diagnostic logs and expressly overrides R0 for this action. R2 applies because the bundle consists entirely of synthetic benchmark logs and no customer information, ",
+        "reserveGEN": "0",
+        "rules": [
+          {
+            "applicability": "APPLIES",
+            "exception": "NO_OVERRIDE",
+            "id": "R0",
+            "label": "IN"
+          },
+          {
+            "applicability": "APPLIES",
+            "exception": "OVERRIDES",
+            "id": "R1",
+            "label": "OUT"
+          },
+          {
+            "applicability": "APPLIES",
+            "exception": "OVERRIDES",
+            "id": "R2",
+            "label": "IN"
+          }
+        ],
+        "status": "USED"
+      },
+      {
+        "action": "Publish an external diagnostic bundle containing production diagnostic logs with customer information.",
+        "attempts": 1,
+        "currentAttempt": "customer-publication:1",
+        "deadline": 1792457087,
+        "digest": "7c2878b389beb576608df10fa63eaf8bce2c219aac1cc522c6fb0561003820ef",
+        "id": "customer-publication",
+        "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+        "policyId": "diagnostics",
+        "policyTitle": "Shared diagnostic publication policy",
+        "reason": "The action is external publication of diagnostic logs, so R0 applies. R1 also applies because it prohibits that same action and expressly overrides R0, its declared target, for external publication of diagnostic logs. R2 only applies to bundles consisting entirely of synthetic benchmark logs and exp",
+        "reserveGEN": "0",
+        "rules": [
+          {
+            "applicability": "APPLIES",
+            "exception": "NO_OVERRIDE",
+            "id": "R0",
+            "label": "OUT"
+          },
+          {
+            "applicability": "APPLIES",
+            "exception": "OVERRIDES",
+            "id": "R1",
+            "label": "IN"
+          },
+          {
+            "applicability": "NOT_APPLICABLE",
+            "exception": "NO_OVERRIDE",
+            "id": "R2",
+            "label": "INACTIVE"
+          }
+        ],
+        "status": "DENIED"
+      },
+      {
+        "action": "Publish synthetic diagnostic logs externally.",
+        "attempts": 1,
+        "currentAttempt": "mutual-exception-cycle:1",
+        "deadline": 1792457641,
+        "digest": "7d5b0a1e9889af0869c5537341189347c04fd04a82a474c0f2376f5791a852ed",
+        "id": "mutual-exception-cycle",
+        "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "policyDigest": "f7b7c80646d3d46a6bdba77ba9aace53e4f7d7a947c73a23a9e340f611993d23",
+        "policyId": "conflicting-exceptions",
+        "policyTitle": "Mutually conflicting diagnostic exceptions",
+        "reason": "R0 and R1 expressly target each other regarding the specific action; R2 applies only to internal dashboard viewing.",
+        "reserveGEN": "0",
+        "rules": [
+          {
+            "applicability": "APPLIES",
+            "exception": "OVERRIDES",
+            "id": "R0",
+            "label": "UNDEC"
+          },
+          {
+            "applicability": "APPLIES",
+            "exception": "OVERRIDES",
+            "id": "R1",
+            "label": "UNDEC"
+          },
+          {
+            "applicability": "NOT_APPLICABLE",
+            "exception": "NO_OVERRIDE",
+            "id": "R2",
+            "label": "INACTIVE"
+          }
+        ],
+        "status": "CONFLICT"
+      },
+      {
+        "action": "Publish entirely synthetic diagnostic logs externally.",
+        "attempts": 0,
+        "currentAttempt": "",
+        "deadline": 1792457521,
+        "digest": "4780cff01f9abd680fc4340ff24ff50cd12bd691b598df8b4beca2e1fc00927b",
+        "id": "expired-open",
+        "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+        "policyId": "diagnostics",
+        "policyTitle": "Shared diagnostic publication policy",
+        "reason": "",
+        "reserveGEN": "1",
+        "rules": [],
+        "status": "OPEN"
+      },
+      {
+        "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+        "attempts": 0,
+        "currentAttempt": "",
+        "deadline": 1792457577,
+        "digest": "43621ecd610810fa43eaf1acb5b89d038b1de07891f132bc84dd56ae620b9ebc",
+        "id": "unused-grant",
+        "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+        "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+        "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+        "policyId": "diagnostics",
+        "policyTitle": "Shared diagnostic publication policy",
+        "reason": "",
+        "reserveGEN": "1",
+        "rules": [],
+        "status": "OPEN"
+      }
+    ],
+    "contractBalanceGEN": "2",
+    "actorBalanceGEN": "21.162192459499988344"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "sourceCommit": "f498e18319a3d0569dab7400c8bf810079969d9a",
+  "sourceSha256": "a98626be9b84e28b9523a5c3f89be50de596a5114919357b2593126104955d66",
+  "api": "v0.3.0",
+  "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+  "genvm": "v0.6.0-rc5",
+  "sdk": "2.0.0-rc.1",
+  "contractVersion": "RW_V1",
+  "operation": "ratify",
+  "args": [
+    "conflicting-exceptions",
+    "f7b7c80646d3d46a6bdba77ba9aace53e4f7d7a947c73a23a9e340f611993d23"
+  ],
+  "actor": "0x2818B7BC95a05Df416E7c2e7F928e12FE4715cFD",
+  "valueGEN": "0",
+  "feeReserveGEN": "0.000378492000010352",
+  "before": {
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "0",
+      "invariant": true,
+      "receivedGEN": "2",
+      "withdrawnGEN": "2"
+    },
+    "contractBalanceGEN": "0",
+    "actorBalanceGEN": "2.997385988249975898",
+    "ownCreditGEN": "0"
+  },
+  "preparedAt": "2026-10-20T00:42:31.608Z",
+  "status": "FINALIZED",
+  "hash": "0x328373670cc1ad687820e21d033387d8399ef255dbd2e8ae5bef74f3128fd08c",
+  "executionResult": "SUCCESS",
+  "finalizedObservedAt": "2026-10-20T00:43:12.481Z",
+  "transactionExplorer": "https://explorer-studio-dev.genlayer.com/tx/0x328373670cc1ad687820e21d033387d8399ef255dbd2e8ae5bef74f3128fd08c",
+  "receipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true,
+    "hash": "0x328373670cc1ad687820e21d033387d8399ef255dbd2e8ae5bef74f3128fd08c",
+    "from": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+    "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+  },
+  "after": {
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "0",
+      "invariant": true,
+      "receivedGEN": "2",
+      "withdrawnGEN": "2"
+    },
+    "contractBalanceGEN": "0",
+    "actorBalanceGEN": "2.997307359749975075"
+  }
+}

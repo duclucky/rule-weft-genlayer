@@ -1,0 +1,59 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "sourceCommit": "f498e18319a3d0569dab7400c8bf810079969d9a",
+  "sourceSha256": "a98626be9b84e28b9523a5c3f89be50de596a5114919357b2593126104955d66",
+  "api": "v0.3.0",
+  "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+  "genvm": "v0.6.0-rc5",
+  "sdk": "2.0.0-rc.1",
+  "contractVersion": "RW_V1",
+  "operation": "open_request",
+  "args": [
+    "mutual-exception-cycle",
+    "conflicting-exceptions",
+    "Publish synthetic diagnostic logs externally.",
+    "f7b7c80646d3d46a6bdba77ba9aace53e4f7d7a947c73a23a9e340f611993d23",
+    1792457641
+  ],
+  "actor": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+  "valueGEN": "1",
+  "feeReserveGEN": "0.000378514800010352",
+  "before": {
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "0",
+      "invariant": true,
+      "receivedGEN": "2",
+      "withdrawnGEN": "2"
+    },
+    "contractBalanceGEN": "0",
+    "actorBalanceGEN": "23.162634999749992459",
+    "ownCreditGEN": "0"
+  },
+  "preparedAt": "2026-10-20T00:44:06.114Z",
+  "status": "FINALIZED",
+  "hash": "0x99c8edba77c162c337a4d139e293c9f33c8975be178839a4f36e75793bed64fa",
+  "executionResult": "SUCCESS",
+  "finalizedObservedAt": "2026-10-20T00:44:46.533Z",
+  "transactionExplorer": "https://explorer-studio-dev.genlayer.com/tx/0x99c8edba77c162c337a4d139e293c9f33c8975be178839a4f36e75793bed64fa",
+  "receipt": {
+    "status": "FINALIZED",
+    "execution": "SUCCESS",
+    "successful": true,
+    "hash": "0x99c8edba77c162c337a4d139e293c9f33c8975be178839a4f36e75793bed64fa",
+    "from": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+    "to": "0xfd64d6cd0816970ce6151aa5232cf8f4bdf41d32"
+  },
+  "after": {
+    "accounting": {
+      "creditGEN": "0",
+      "escrowGEN": "1",
+      "invariant": true,
+      "receivedGEN": "3",
+      "withdrawnGEN": "2"
+    },
+    "contractBalanceGEN": "1",
+    "actorBalanceGEN": "22.162556366499991636"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-20T00:47:54.977Z",
+  "request": {
+    "action": "Publish entirely synthetic diagnostic logs externally.",
+    "attempts": 0,
+    "currentAttempt": "",
+    "deadline": 1792457521,
+    "digest": "4780cff01f9abd680fc4340ff24ff50cd12bd691b598df8b4beca2e1fc00927b",
+    "id": "expired-open",
+    "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+    "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+    "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+    "policyId": "diagnostics",
+    "policyTitle": "Shared diagnostic publication policy",
+    "reason": "",
+    "reserveGEN": "1",
+    "rules": [],
+    "status": "OPEN"
+  },
+  "canConsume": false,
+  "expected": "OPEN"
+}

@@ -1,0 +1,213 @@
+{
+  "network": "Studio Dev",
+  "chainId": 61997,
+  "sourceCommit": "f498e18319a3d0569dab7400c8bf810079969d9a",
+  "sourceSha256": "a98626be9b84e28b9523a5c3f89be50de596a5114919357b2593126104955d66",
+  "api": "v0.3.0",
+  "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+  "genvm": "v0.6.0-rc5",
+  "sdk": "2.0.0-rc.1",
+  "contractVersion": "RW_V1",
+  "address": "0xFd64D6cD0816970CE6151aa5232cf8f4Bdf41D32",
+  "at": "2026-10-20T00:46:40.597Z",
+  "scope": "Script-signed real network lifecycle; browser evidence is separate.",
+  "policies": [
+    {
+      "collectDeadline": 1792459232,
+      "creator": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "digest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+      "expiry": 1792542032,
+      "id": "diagnostics",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "rules": [
+        {
+          "author": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "effect": "ALLOW",
+          "id": "R0",
+          "ratified": true,
+          "submitted": true,
+          "target": "",
+          "text": "Allow external publication of diagnostic logs."
+        },
+        {
+          "author": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+          "effect": "BLOCK",
+          "id": "R1",
+          "ratified": true,
+          "submitted": true,
+          "target": "R0",
+          "text": "Prohibit external publication of diagnostic logs. This restriction overrides R0, the general permission to publish diagnostic logs."
+        },
+        {
+          "author": "0xc73a3ded1164883c41ab87ed13a279b2b4cfd4b8",
+          "effect": "ALLOW",
+          "id": "R2",
+          "ratified": true,
+          "submitted": true,
+          "target": "R1",
+          "text": "As an exception to R1, allow external diagnostic bundles consisting entirely of synthetic benchmark logs. This exception does not cover logs containing customer information."
+        }
+      ],
+      "status": "ACTIVE",
+      "title": "Shared diagnostic publication policy"
+    },
+    {
+      "collectDeadline": 1792460278,
+      "creator": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "digest": "f7b7c80646d3d46a6bdba77ba9aace53e4f7d7a947c73a23a9e340f611993d23",
+      "expiry": 1792543078,
+      "id": "conflicting-exceptions",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "rules": [
+        {
+          "author": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+          "effect": "ALLOW",
+          "id": "R0",
+          "ratified": true,
+          "submitted": true,
+          "target": "R1",
+          "text": "Allow external publication of synthetic diagnostic logs. For exactly this action, this rule overrides the prohibition in R1."
+        },
+        {
+          "author": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+          "effect": "BLOCK",
+          "id": "R1",
+          "ratified": true,
+          "submitted": true,
+          "target": "R0",
+          "text": "Prohibit external publication of all diagnostic logs, including synthetic diagnostic logs. For exactly this action, this rule overrides the permission in R0."
+        },
+        {
+          "author": "0xc73a3ded1164883c41ab87ed13a279b2b4cfd4b8",
+          "effect": "ALLOW",
+          "id": "R2",
+          "ratified": true,
+          "submitted": true,
+          "target": "",
+          "text": "Allow viewing diagnostic logs only on an internal dashboard; external publication is outside this permission."
+        }
+      ],
+      "status": "ACTIVE",
+      "title": "Mutually conflicting diagnostic exceptions"
+    }
+  ],
+  "requests": [
+    {
+      "action": "Publish an external diagnostic bundle consisting entirely of synthetic benchmark logs with no customer information.",
+      "attempts": 1,
+      "currentAttempt": "synthetic-publication:1",
+      "deadline": 1792456885,
+      "digest": "4dfce6047fa7bb32548f6a8e2b9ef8123a623980d2460b9a2b1266ee8e7715d9",
+      "id": "synthetic-publication",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+      "policyId": "diagnostics",
+      "policyTitle": "Shared diagnostic publication policy",
+      "reason": "The action is external publication of diagnostic material, so R0 applies. R1 also applies because it prohibits external publication of diagnostic logs and expressly overrides R0 for this action. R2 applies because the bundle consists entirely of synthetic benchmark logs and no customer information, ",
+      "reserveGEN": "0",
+      "rules": [
+        {
+          "applicability": "APPLIES",
+          "exception": "NO_OVERRIDE",
+          "id": "R0",
+          "label": "IN"
+        },
+        {
+          "applicability": "APPLIES",
+          "exception": "OVERRIDES",
+          "id": "R1",
+          "label": "OUT"
+        },
+        {
+          "applicability": "APPLIES",
+          "exception": "OVERRIDES",
+          "id": "R2",
+          "label": "IN"
+        }
+      ],
+      "status": "USED"
+    },
+    {
+      "action": "Publish an external diagnostic bundle containing production diagnostic logs with customer information.",
+      "attempts": 1,
+      "currentAttempt": "customer-publication:1",
+      "deadline": 1792457087,
+      "digest": "7c2878b389beb576608df10fa63eaf8bce2c219aac1cc522c6fb0561003820ef",
+      "id": "customer-publication",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "policyDigest": "0856f1993fb498710587a8d6c1a51be37a6dfde9fa7d3a9488e9e08e81d153c7",
+      "policyId": "diagnostics",
+      "policyTitle": "Shared diagnostic publication policy",
+      "reason": "The action is external publication of diagnostic logs, so R0 applies. R1 also applies because it prohibits that same action and expressly overrides R0, its declared target, for external publication of diagnostic logs. R2 only applies to bundles consisting entirely of synthetic benchmark logs and exp",
+      "reserveGEN": "0",
+      "rules": [
+        {
+          "applicability": "APPLIES",
+          "exception": "NO_OVERRIDE",
+          "id": "R0",
+          "label": "OUT"
+        },
+        {
+          "applicability": "APPLIES",
+          "exception": "OVERRIDES",
+          "id": "R1",
+          "label": "IN"
+        },
+        {
+          "applicability": "NOT_APPLICABLE",
+          "exception": "NO_OVERRIDE",
+          "id": "R2",
+          "label": "INACTIVE"
+        }
+      ],
+      "status": "DENIED"
+    },
+    {
+      "action": "Publish synthetic diagnostic logs externally.",
+      "attempts": 1,
+      "currentAttempt": "mutual-exception-cycle:1",
+      "deadline": 1792457641,
+      "digest": "7d5b0a1e9889af0869c5537341189347c04fd04a82a474c0f2376f5791a852ed",
+      "id": "mutual-exception-cycle",
+      "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+      "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "policyDigest": "f7b7c80646d3d46a6bdba77ba9aace53e4f7d7a947c73a23a9e340f611993d23",
+      "policyId": "conflicting-exceptions",
+      "policyTitle": "Mutually conflicting diagnostic exceptions",
+      "reason": "R0 and R1 expressly target each other regarding the specific action; R2 applies only to internal dashboard viewing.",
+      "reserveGEN": "0",
+      "rules": [
+        {
+          "applicability": "APPLIES",
+          "exception": "OVERRIDES",
+          "id": "R0",
+          "label": "UNDEC"
+        },
+        {
+          "applicability": "APPLIES",
+          "exception": "OVERRIDES",
+          "id": "R1",
+          "label": "UNDEC"
+        },
+        {
+          "applicability": "NOT_APPLICABLE",
+          "exception": "NO_OVERRIDE",
+          "id": "R2",
+          "label": "INACTIVE"
+        }
+      ],
+      "status": "CONFLICT"
+    }
+  ],
+  "accounting": {
+    "creditGEN": "0",
+    "escrowGEN": "0",
+    "invariant": true,
+    "receivedGEN": "3",
+    "withdrawnGEN": "3"
+  },
+  "nativeBalanceGEN": "0",
+  "passed": true
+}

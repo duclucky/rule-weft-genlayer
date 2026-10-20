@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-20T01:09:04.959Z",
+  "request": {
+    "action": "View an internal dashboard entry. It is not known whether that entry contains diagnostic logs or unrelated business records. This action does not publish anything externally.",
+    "attempts": 2,
+    "currentAttempt": "unclear-internal-entry:2",
+    "deadline": 1792458703,
+    "digest": "5c3c62e41f15ba9e1a383bbc59c38489dfb7d88284c856d94649ba00b0bc568b",
+    "id": "unclear-internal-entry",
+    "issuer": "0x2818b7bc95a05df416e7c2e7f928e12fe4715cfd",
+    "payer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+    "policyDigest": "f7b7c80646d3d46a6bdba77ba9aace53e4f7d7a947c73a23a9e340f611993d23",
+    "policyId": "conflicting-exceptions",
+    "policyTitle": "Mutually conflicting diagnostic exceptions",
+    "reason": "R0 and R1 are NOT_APPLICABLE because the action is internal viewing, not external publication. R2 is UNCLEAR because it is unknown if the dashboard entry contains diagnostic logs.",
+    "reserveGEN": "1",
+    "rules": [
+      {
+        "applicability": "NOT_APPLICABLE",
+        "exception": "NO_OVERRIDE",
+        "id": "R0",
+        "label": "UNDEC"
+      },
+      {
+        "applicability": "NOT_APPLICABLE",
+        "exception": "NO_OVERRIDE",
+        "id": "R1",
+        "label": "UNDEC"
+      },
+      {
+        "applicability": "UNCLEAR",
+        "exception": "NO_OVERRIDE",
+        "id": "R2",
+        "label": "UNDEC"
+      }
+    ],
+    "status": "RETRYABLE"
+  },
+  "canConsume": false,
+  "expected": "RETRYABLE"
+}
