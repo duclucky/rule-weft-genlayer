@@ -1,0 +1,9 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {CalldataAddress} from 'genlayer-js/types';
+import {contractArgs} from './contract-args.mjs';
+const a='0x1111111111111111111111111111111111111111';
+test('policy author and issuer ABI arguments are binary addresses',()=>{const args=contractArgs('create_policy',['p','Title',a,a,a,123,456]);assert(args.slice(2,5).every(x=>x instanceof CalldataAddress));assert.equal(args[0],'p');});
+test('credit owner ABI argument is binary, already converted addresses are preserved',()=>{const args=contractArgs('get_credit',[a]);assert(args[0] instanceof CalldataAddress);assert.equal(contractArgs('get_credit',args)[0],args[0]);});
+test('address-looking action prose stays exact text',()=>assert.deepEqual(contractArgs('open_request',['r','p',a,'digest',123]),['r','p',a,'digest',123]));
+test('invalid ABI address fails before simulation or signing',()=>assert.throws(()=>contractArgs('get_credit',['not-address']),/Invalid contract address/));

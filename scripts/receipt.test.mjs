@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {state,safeReceipt} from './receipt.mjs';
+test('raw Studio finalized success is required',()=>assert.deepEqual(state({status:'FINALIZED',consensus_data:{leader_receipt:[{mode:'leader',execution_result:'SUCCESS'}]}}),{status:'FINALIZED',execution:'SUCCESS',successful:true}));
+test('normalized SDK numeric and named shapes',()=>{assert.equal(state({status:7,txExecutionResult:1}).successful,true);assert.equal(state({statusName:'FINALIZED',txExecutionResultName:'FINISHED_WITH_RETURN'}).successful,true);});
+test('finality alone and accepted success are not completion',()=>{assert.equal(state({status:'FINALIZED'}).successful,false);assert.equal(state({status:'ACCEPTED',execution_result:'SUCCESS'}).successful,false);});
+test('conflicting or failed execution never counts as success',()=>{for(const r of [{status:7,execution_result:'ERROR'},{status:7,txExecutionResult:0},{status:7,txExecutionResult:1,consensus_data:{leader_receipt:[{execution_result:'ERROR'}]}}])assert.equal(state(r).successful,false);});
+test('quorum idle control result does not negate completed leader success',()=>assert.equal(state({status:7,txExecutionResult:1,consensus_data:{leader_receipt:[{mode:'leader',execution_result:'SUCCESS'},{mode:'validator',vote:'idle',execution_result:'ERROR',controlCode:'CONSENSUS_VALIDATOR_QUORUM_REACHED'}]}}).successful,true));
+test('receipt projection excludes arbitrary and nested sensitive fields',()=>{const result=safeReceipt({status:'FINALIZED',execution_result:'SUCCESS',node_config:{private_key:'NEVER_OUTPUT'},stdout:'raw',hash:'0x'+'a'.repeat(64)});assert.equal(JSON.stringify(result).includes('NEVER_OUTPUT'),false);assert.deepEqual(Object.keys(result).sort(),['execution','from','hash','status','successful','to']);});

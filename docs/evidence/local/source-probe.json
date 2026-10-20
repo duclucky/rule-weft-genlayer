@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-19T23:03:20.878Z",
+  "command": "node scripts/source-probe.mjs",
+  "url": "https://www.w3.org/TR/2018/REC-odrl-model-20180215/",
+  "http": 200,
+  "length": 181875,
+  "sha256": "af187a2c26b2429a579039403f34d9a5d5f29a1e01019662043068fa1ca2beaa",
+  "identityOK": true,
+  "scope": "Local HTTP source acquisition only, no GenVM finality or legal-compliance proof"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "rule-weft-genlayer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace frontend",
+    "build": "npm run build --workspace frontend",
+    "check:frontend": "npm run check --workspace frontend",
+    "check": "node scripts/check.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  },
+  "dependencies": {
+    "genlayer-js": "2.0.0-rc.1",
+    "viem": "2.56.5"
+  }
+}
