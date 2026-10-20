@@ -118,3 +118,18 @@ configuration. Native Node import of emitted files and GET405 passed; this
 check is now part of npm run check. A READY deployment alone is not app proof.
 The first public CI run39355602849 completed SUCCESS for commita1bdbee; newer
 commits require their own result before a current-CI completion claim.
+
+## Phases 12 and 13 verified — 2026-10-20T02:00:15Z
+
+Deployment dpl_F2wareZpsiNgWBRSdQ9HmYuTJTot is READY at the resolved production
+alias https://rule-weft-genlayer.vercel.app. Final function transpilation has no
+missing-type errors; TypeScript is the only proxy source. Fresh curl root HEAD
+returned HTTP/1.1 200 OK; body contains RuleWeft and <div id="root"></div>.
+Fresh POST /genlayer-rpc eth_chainId returned HTTP200 and0xf22d. Actual Chrome
+loaded three canonical policies and the Activity route. Saved hosting.json
+records deployment identity, commands and superseded failures. Phase14 now
+updates README and pushes verified live/contract links. Browser-wallet writes
+remain pending due the selected OKX provider returning4001 on reconnect.
+
+Exact collection count:83 direct tests +4 Python metadata tests +23 Node tests
++69 frontend tests=179, plus the emitted-API native-Node check; no critical skips.

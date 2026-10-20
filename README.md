@@ -17,10 +17,20 @@ script-signed network results, not CI or browser-write proof.
 No external execution, legal permission, ODRL conformance or adoption is claimed.
 
 Chrome RPC/CORS, OKX connection, restoration and logout have been verified.
-Actual browser-wallet writes and public hosting remain pending. The deployed
+Actual browser-wallet writes remain pending. The deployed
 contract is0xFd64D6cD0816970CE6151aa5232cf8f4Bdf41D32. See
 [verification](docs/VERIFICATION.md), [preserved recovery corrections](docs/evidence/studio-dev/RECOVERY-CORRECTION.md)
 and [specification](docs/README.md).
+
+## Live App
+
+[Open RuleWeft](https://rule-weft-genlayer.vercel.app)
+· [Public repository](https://github.com/duclucky/rule-weft-genlayer)
+· [CI runs](https://github.com/duclucky/rule-weft-genlayer/actions)
+
+Verified root HTTP 200, RuleWeft title, React root, and production proxy HTTP 200
+with Studio Dev chain ID 61997. Actual Chrome loads canonical policies/history.
+This is live read proof; browser signatures and their lifecycle remain pending.
 
 ## Deployed Contract
 
