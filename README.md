@@ -8,7 +8,7 @@ and deterministic grounded labeling resolves which rules remain effective.
 Unresolved prohibition cycles never authorize a request.
 
 Status: deployed on Studio Dev; full delivery is in progress. The latest
-`npm run check` passed 87 Python, 23 Node and 69 frontend tests (179 total), plus
+`npm run check` passed 87 Python, 23 Node and 79 frontend tests (189 total), plus
 semantic lint, TypeScript and production build. Grant/use, denial, conflict,
 retry and expiry have finalized with real native GEN exits. Fresh reconciliation
 finds 47 lifecycle transactions, 9 expected request states, 9 GEN received and

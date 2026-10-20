@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-20T02:07:54.407Z",
+  "network": {
+    "network": "Studio Dev",
+    "chainId": 61997,
+    "rpc": "https://studio-next.genlayer.com/api",
+    "explorer": "https://explorer-studio-dev.genlayer.com"
+  },
+  "wallet": "0xc495ef51618d03267a1f227afe5b27b38c748272",
+  "balanceGEN": "33.277453182332787962",
+  "creditGEN": "0",
+  "contractAccounting": {
+    "creditGEN": "0",
+    "escrowGEN": "0",
+    "invariant": true,
+    "receivedGEN": "9",
+    "withdrawnGEN": "9"
+  },
+  "contractNativeGEN": "0"
+}

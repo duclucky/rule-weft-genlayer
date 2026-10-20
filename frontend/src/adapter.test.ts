@@ -7,9 +7,9 @@ import type {Provider} from './domain';
 const payer='0x1111111111111111111111111111111111111111',destination='0x2222222222222222222222222222222222222222',tx='0x'+'3'.repeat(64);
 const endpoint='https://offline-ruleweft.invalid';
 const sends:{method:string;params?:unknown[]}[]=[];
-let receipt=0,materializedResult=1;
-const provider:Provider={async request(input){if(input.method==='eth_accounts')return [payer];if(input.method==='eth_chainId')return '0xf22d';if(input.method==='eth_sendTransaction'){sends.push(input);return tx;}throw Error('Unexpected provider request '+input.method);}};
-beforeEach(()=>{sends.length=0;receipt=0;materializedResult=1;vi.stubGlobal('fetch',vi.fn(async(_url,options)=>{
+let receipt=0,materializedResult=1,failSend=false;
+const provider:Provider={async request(input){if(input.method==='eth_accounts')return [payer];if(input.method==='eth_chainId')return '0xf22d';if(input.method==='eth_sendTransaction'){if(failSend)throw {code:-32602,message:'private-validator-config-must-not-appear',node_config:{secret:'hidden'}};sends.push(input);return tx;}throw Error('Unexpected provider request '+input.method);}};
+beforeEach(()=>{sends.length=0;receipt=0;materializedResult=1;failSend=false;vi.stubGlobal('fetch',vi.fn(async(_url,options)=>{
  const {id,method,params}=JSON.parse(String(options?.body));let result:unknown;
  if(method==='eth_getTransactionCount')result='0x0';
  else if(method==='eth_estimateGas')result='0x30d40';
@@ -29,6 +29,7 @@ beforeEach(()=>{sends.length=0;receipt=0;materializedResult=1;vi.stubGlobal('fet
 }));});
 afterEach(()=>vi.unstubAllGlobals());
 describe('actual project adapter through the real SDK, intercepted I/O only',()=>{
+ it('reports only the failed wallet method and numeric code without claiming an ambiguous send never happened',async()=>{failSend=true;const a=createRuleWeftAdapter({endpoint,address:destination,account:payer,provider,pollMs:0});try{await a.write('consume',['r'],'0',()=>{});throw Error('Expected wallet rejection');}catch(e){const message=(e as Error).message;expect(message).toContain('eth_sendTransaction');expect(message).toContain('-32602');expect(message).not.toMatch(/private-validator|node_config|hidden|did not submit/);}});
  it('does not report finalized success when leader returned but consensus rejected application',async()=>{materializedResult=2;const stages:string[]=[];await expect(createRuleWeftAdapter({endpoint,address:destination,account:payer,provider,pollMs:0,maxPolls:3}).write('consume',['r'],'0',p=>stages.push(p))).rejects.toThrow('did not finalize successfully');expect(stages).not.toContain('Finalized');});
  for(const [command,args] of [
   ['create_policy',['p','Policy',destination,'0x4444444444444444444444444444444444444444',destination,2000000000,2000100000]],

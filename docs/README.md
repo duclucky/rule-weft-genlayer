@@ -3,9 +3,12 @@
 ## Identity
 
 - Idea: IDEA-049; project RuleWeft; slug rule-weft.
-- Category: Projects. Status: BUILDING (Phase4 specification verified).
+- Category: Projects. Status: DELIVERY_IN_PROGRESS (Phase15 audit; browser writes pending).
 - Network: Studio Dev primary, D1 fallback only after verified unavailability.
-- Repository, deployment, public app and execution evidence: PENDING_REAL_EVIDENCE.
+- Repository: https://github.com/duclucky/rule-weft-genlayer
+- App: https://rule-weft-genlayer.vercel.app
+- Studio Dev deployment and script-signed execution: evidence/studio-dev/canonical-summary.json.
+- Full browser-wallet execution: PENDING_REAL_EVIDENCE; no submission-readiness claim.
 
 ## One-sentence product hook
 
@@ -229,19 +232,19 @@ is read dynamically, never hardcoded to1. A rejected transaction mutates nothing
 
 | Canonical state | User action | Contract write | UI component | Frontend test | Evidence status |
 | --- | --- | --- | --- | --- | --- |
-| New policy | Create agreement | create_policy | NewPolicy/ProductForm | Planned create-and-reload adapter test; route baseline PASS | Browser write pending |
-| COLLECTING | Publish own rule | submit_rule | PolicyDetail/ProductForm | Planned own-slot/caller/target test; page baseline PASS | Browser write pending |
-| RATIFYING | Agree to full slate | ratify | PolicyDetail/WriteButton | Planned exact-digest assent test | Browser write pending |
-| Expired incomplete policy | Cancel draft | cancel_policy | PolicyDetail/WriteButton | Planned creator/expiry visibility test | Browser write pending |
-| ACTIVE | Pay for request | open_request | NewRequest/ProductForm | Planned real-SDK1GEN sender/value test; route baseline PASS | Browser write pending |
+| New policy | Create agreement | create_policy | NewPolicy/ProductForm | App create form/detail + real-SDK wrapper tests | Browser write pending |
+| COLLECTING | Publish own rule | submit_rule | PolicyDetail/ProductForm | App own-slot form/reload + real-SDK wrapper tests | Browser write pending |
+| RATIFYING | Agree to full slate | ratify | PolicyDetail/WriteButton | App exact-digest assent/reload + real-SDK tests | Browser write pending |
+| Expired incomplete policy | Cancel draft | cancel_policy | PolicyDetail/WriteButton | App expired-draft control/reload + real-SDK tests | Browser write pending |
+| ACTIVE | Pay for request | open_request | NewRequest/ProductForm | App purchase/detail + real-SDK exact1GEN sender/value tests | Browser write pending |
 | OPEN/RETRYABLE | Review/retry | review_request | RequestDetail/WriteButton | App review/reload/error tests PASS, temporal actions PASS | Browser write pending |
-| GRANTED | Use once | consume | RequestDetail/WriteButton | Temporal and role action matrix PASS; actual wrapper test planned | Browser write pending |
-| Expired OPEN/RETRYABLE/GRANTED | Recover purchase | recover | RequestDetail/WriteButton | Exact-boundary action matrix PASS; wrapper/reload planned | Browser write pending |
+| GRANTED | Use once | consume | RequestDetail/WriteButton | App legal control/reload + temporal/role + real-SDK tests | Browser write pending |
+| Expired OPEN/RETRYABLE/GRANTED | Recover purchase | recover | RequestDetail/WriteButton | App control/reload + exact-boundary/role + real-SDK tests | Browser write pending |
 | Positive own credit | Withdraw | withdraw | Account/WriteButton | Own-credit adapter call/reload test PASS | Browser write and native delivery pending |
 
-All planned rows must become actual wrapper/control/test evidence before Phase7
-exit. Every visible write is already present behind the typed adapter; fixture
-tests do not establish a browser-wallet lifecycle.
+All nine rows have wrapper/control/test/finality/reload paths. UI and real-SDK
+tests intercept external I/O in an explicitly labeled test harness; they do not
+establish actual browser-wallet signatures or a browser lifecycle.
 
 | Method | Caller | Allowed states | Forbidden states | Temporal/expiry gate | Idempotency | Value/accounting effect | Views affected | Negative tests |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -381,12 +384,12 @@ test or simulation is labeled as network finality or actual transfer.
 
 | Claim | Contract method/state | View/read | Test | Network evidence |
 | --- | --- | --- | --- | --- |
-| Whole-policy agreement | submit_rule/ratify, locked digest/assent | get_policy/get_rule | Role/digest/replay/immutability | Pending authored/ratification receipts and final reads |
-| Neutral exception semantics | review_request, attempts/assessments | get_request/get_attempt | Independent replay, all enums, injection, source/auth failures | Pending successful live semantic reviews |
-| Cycle-safe skeptical approval | Deterministic grounded labels and GRANTED | can_consume/get_request |512 reference graphs plus chain/block/cycle/invariants | Pending finalized grant/denial/conflict canonical views |
-| One-use paid permission | consume, USED | get_request/can_consume | Wrong actor/time/state/duplicate | Pending consume receipt and issuer credit |
-| Every purchase recoverable | recover/denial/conflict | get_credit/get_accounting | All terminal/retry/expiry paths, stale-phase boundaries | Pending payer refunds and canonical ledger |
-| Native GEN exit | withdraw | credit/accounting plus RPC balances | Own credit, duplicate and EVM boundary | Pending exact native debit and child/recipient evidence |
+| Whole-policy agreement | submit_rule/ratify, locked digest/assent | get_policy/get_rule | Role/digest/replay/immutability | tx-diagnostics-rule*/ratify*, lifecycle.json and canonical-summary.json |
+| Neutral exception semantics | review_request, attempts/assessments | get_request/get_attempt | Independent replay, all enums, injection, source/auth failures | grant-review.json, denial-review.json, bounded-retry-review.json; failed disagreement preserved separately |
+| Cycle-safe skeptical approval | Deterministic grounded labels and GRANTED | can_consume/get_request |512 reference graphs plus chain/block/cycle/invariants | lifecycle.json and canonical-summary.json grant/denial/conflict |
+| One-use paid permission | consume, USED | get_request/can_consume | Wrong actor/time/state/duplicate | tx-synthetic-consume.json, exit-issuer-use-fee.json |
+| Every purchase recoverable | recover/denial/conflict | get_credit/get_accounting | All terminal/retry/expiry paths, stale-phase boundaries | recovery-acceptance.json and zero-liability canonical-summary.json |
+| Native GEN exit | withdraw | credit/accounting plus RPC balances | Own credit, duplicate and EVM boundary | exit-*.json exact native debit/recipient checks; historical3GEN cleanup explicitly nonconforming |
 | Complete product workflow | Typed adapters/UI for all9 writes | Canonical policy/request/history/credit | Route/control/role/finality/SDK tests | Pending browser-wallet primary journey; peer script proof labeled separately |
 
 ## Deployment, evidence and exact Definition of Done
@@ -445,6 +448,6 @@ collide with existing work. No larger frontend compensates for a failed gate.
 V1 is a three-rule constitutive protocol on a resettable development network;
 not a legal/compliance oracle, proof of real external execution, private-data
 system, general ODRL interpreter, adopted gateway or audited production system.
-All model/finality/value/browser/publication execution remains PENDING until
-separate fresh evidence. Administrative status does not turn admission into
-PASS_EXECUTION.
+Model/finality/value and public hosting have separate verified evidence. Full
+browser-wallet execution remains PENDING. Admission does not become complete
+Projects PASS_EXECUTION until that primary user journey is proven.

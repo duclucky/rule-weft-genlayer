@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-20T02:21:02.1780738Z",
+  "tool": "unmodified parent tools/genlayer-grading-bot/genlayer-precheck.ps1",
+  "command": "genlayer-precheck.ps1 -Project D:\\Genlayer Project\\rule-weft -Category projects -RepoUrl https://github.com/duclucky/rule-weft-genlayer -ExplorerUrl https://explorer-studio-dev.genlayer.com/address/0xFd64D6cD0816970CE6151aa5232cf8f4Bdf41D32 -NotesFile docs/SUBMISSION-DESCRIPTION.txt",
+  "counts": {
+    "BLOCKER": 0,
+    "WARN": 2,
+    "AUTO": 7
+  },
+  "dynamic": {
+    "npm run check": "PASS",
+    "gltest tests/": "PASS"
+  },
+  "testCounts": {
+    "frontend": 79,
+    "pythonMetadata": 4,
+    "direct": 83,
+    "node": 23,
+    "total": 189
+  },
+  "exitCode": 1,
+  "exitReason": "Two reviewed static warnings; no BLOCKER",
+  "machineGate": [
+    {
+      "status": "pass",
+      "item": "real GenLayer contract present"
+    },
+    {
+      "status": "pass",
+      "item": "uses consensus (not deterministic-only / not fake off-chain)"
+    },
+    {
+      "status": "pass",
+      "item": "not a renamed boilerplate / empty fork"
+    },
+    {
+      "status": "pass",
+      "item": "repository builds & tests pass"
+    },
+    {
+      "status": "pass",
+      "item": "frontend actually calls the contract (not branding-only)"
+    }
+  ],
+  "browserWallet": "PENDING_REAL_EVIDENCE",
+  "officialScoreClaimed": false
+}

@@ -133,3 +133,26 @@ remain pending due the selected OKX provider returning4001 on reconnect.
 
 Exact collection count:83 direct tests +4 Python metadata tests +23 Node tests
 +69 frontend tests=179, plus the emitted-API native-Node check; no critical skips.
+
+## Browser interoperability checkpoint — 2026-10-20T02:19Z
+
+The owner reconnected OKX successfully. Public browser wallet is
+0xc495ef51618d03267a1f227afe5b27b38c748272 with33.277453182332787962GEN on Studio Dev;
+no funding was needed. Chrome-native date/autofill submission regression was
+reproduced RED then corrected with named controls and FormData, preserving design.
+All nine UI controls now have actual submission/reload coverage alongside real-SDK
+adapter tests. The safe wallet-error regression was RED then GREEN; production
+messages expose only allowlisted method/error names and numeric codes.
+Latest full check:83direct+4metadata+23Node+79frontend=189PASS, plus native emitted
+API import, one recognized class/18methods, TypeScript/build PASS.
+
+The next actual wallet call reached eth_sendTransaction and returned4001. No
+receipt hash was observed. browser-first-write-inspection.json proves the request
+absent, wallet balance unchanged, native/accounting zero liabilities, and equal
+pending/latest nonce. Do not treat connection or script signing as browser write
+proof. Owner has been asked to keep OKX ready and approve the actual signature.
+No repeat write is sent while that handoff is pending. Form request ID is
+chrome-synthetic-20261020 with a recoverable1GEN purchase and deadline09:40UTC+7.
+If the deadline becomes too close before purchase, update it through the UI;
+never change an already-created canonical request. No GEN was deposited by this
+browser at this checkpoint.

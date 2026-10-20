@@ -23,6 +23,12 @@ function request(x:unknown):RequestItem{
  return r;
 }
 class TerminalError extends Error{}
+function safeWalletFailure(error:unknown){
+ const names=new Set(['TransactionExecutionError','TransactionRejectedRpcError','UserRejectedRequestError','InvalidParamsRpcError','InvalidInputRpcError','InvalidAddressError','AccountNotFoundError','ChainMismatchError','ChainNotFoundError','ChainNotConfiguredError','UnsupportedProviderMethodError','RpcRequestError','UnknownRpcError','HttpRequestError','InternalRpcError','InvalidChainIdError']);
+ const found:string[]=[];let code:number|undefined;const seen=new Set();
+ for(let e=error;e&&typeof e==='object'&&!seen.has(e)&&seen.size<8;){seen.add(e);const row=e as {name?:unknown;code?:unknown;cause?:unknown};if(typeof row.name==='string'&&names.has(row.name))found.push(row.name);if(code===undefined&&typeof row.code==='number'&&Number.isSafeInteger(row.code))code=row.code;e=row.cause;}
+ return [...new Set(found),...(code===undefined?[]:[`code ${code}`])].join(' / ')||'write preparation failed';
+}
 export function createRuleWeftAdapter(options:Options):ContractAdapter{
  const endpoint=options.endpoint??'/genlayer-rpc';
  const chain={...studioDevnet,rpcUrls:{default:{http:[endpoint]}}};
@@ -61,8 +67,8 @@ export function createRuleWeftAdapter(options:Options):ContractAdapter{
    await ensureChain(options.provider);
    const accounts=await options.provider.request({method:'eth_accounts'});
    if(!Array.isArray(accounts)||!valid(accounts[0])||accounts[0].toLowerCase()!==options.account.toLowerCase())throw Error('Your selected account changed. Disconnect and reconnect before signing.');
-   const selected=options.provider;
-   const provider:Provider={async request(input){const result=await selected.request(input);if(input.method==='eth_sendTransaction'&&validHash(result)){pending.set(key,result);onProgress('Submitted');}return result;}};
+   const selected=options.provider;let providerFailure='';
+   const provider:Provider={async request(input){try{const result=await selected.request(input);if(input.method==='eth_sendTransaction'&&validHash(result)){pending.set(key,result);onProgress('Submitted');}return result;}catch(e){const method=['eth_sendTransaction','eth_accounts','eth_chainId','eth_estimateGas','eth_gasPrice','eth_getTransactionCount','eth_getTransactionReceipt','eth_blockNumber'].includes(input.method)?input.method:'provider request';providerFailure=`${method}: ${safeWalletFailure(e)}`;throw e;}}};
    const writer=createClient({chain,account:options.account,provider});
    const value=valueGEN==='1'?10n**18n:0n;
    const call={address,functionName:command,args:contractArgs(command,args),value};
@@ -71,9 +77,9 @@ export function createRuleWeftAdapter(options:Options):ContractAdapter{
    if(quote.policy.enabled&&quote.feeValue<=0n)throw Error('The network did not provide a funded fee quote. No transaction was submitted.');
    onProgress(`Awaiting signature · network fee reserve ${formatUnits(quote.feeValue,18)} GEN`);
    let hash:`0x${string}`;
-   try{hash=await writer.writeContract({...call,fees:{distribution:quote.distribution,feeValue:quote.feeValue,messageAllocations:quote.messageAllocations}});}catch{
+   try{hash=await writer.writeContract({...call,fees:{distribution:quote.distribution,feeValue:quote.feeValue,messageAllocations:quote.messageAllocations}});}catch(e){
     if(pending.has(key))throw Error('Your wallet submitted a transaction. Recheck the same action to inspect it before another attempt.');
-    throw Error('The wallet did not submit this transaction. Check its message, network and available GEN.');
+    throw Error(`The wallet did not return a transaction reference (${providerFailure||safeWalletFailure(e)}). Check wallet activity and the confirmed record before trying again.`);
    }
    if(!validHash(hash))throw Error('The wallet returned an invalid transaction reference.');
    pending.set(key,hash);onProgress('Submitted');
